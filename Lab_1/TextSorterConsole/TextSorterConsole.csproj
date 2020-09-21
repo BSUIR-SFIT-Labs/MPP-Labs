@@ -49,5 +49,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TextSorterLib\TextSorterLib.csproj">
+      <Project>{32B0CE3E-D77F-466F-9991-AA8F1D0A3DA7}</Project>
+      <Name>TextSorterLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
