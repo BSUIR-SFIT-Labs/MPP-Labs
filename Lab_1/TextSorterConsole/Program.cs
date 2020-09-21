@@ -63,6 +63,13 @@ namespace TextSorterConsole
                                 fileSizeInGb * 1024 * 1024 * 1024,
                                 Encoding.Unicode);
                         }
+                        catch (ArgumentException)
+                        {
+                            Console.WriteLine("Error: incorrect file path entered!");
+                            Console.WriteLine("Press ENTER to end the program...");
+                            Console.ReadLine();
+                            return;
+                        }
                         catch (DirectoryNotFoundException)
                         {
                             Console.WriteLine("Error: incorrect file path entered!");
@@ -86,6 +93,13 @@ namespace TextSorterConsole
                         try
                         {
                             sorter.Sort(pathToSourceFile, pathToSortedFile);
+                        }
+                        catch (ArgumentException)
+                        {
+                            Console.WriteLine("Error: incorrect file path entered!");
+                            Console.WriteLine("Press ENTER to end the program...");
+                            Console.ReadLine();
+                            return;
                         }
                         catch (DirectoryNotFoundException)
                         {
