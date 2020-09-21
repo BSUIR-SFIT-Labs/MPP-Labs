@@ -28,11 +28,8 @@ namespace TextSorterLib
         public static void GenerateRandomFile(string pathToGeneratedFile,
             long sizeOfFileToBeGenerated, Encoding encoding)
         {
-            const byte minWordLength = 3;
-            const byte maxWordLength = 15;
-
-            const byte minWordsInString = 20;
-            const byte maxWordsInString = 75;
+            const int minCharsInString = 50;
+            const int maxCharsInString = 300;
 
             sizeOfFileToBeGenerated = GetFileSizeBasedOnEncoding(sizeOfFileToBeGenerated, encoding);
 
@@ -42,24 +39,25 @@ namespace TextSorterLib
                 long currentWriteableByte = 0;
                 while (currentWriteableByte < sizeOfFileToBeGenerated)
                 {
-                    int wordLength = Random.Next(minWordLength, maxWordLength);
-                    int stringLength = Random.Next(minWordsInString, maxWordsInString);
+                    int stringLength = Random.Next(minCharsInString, maxCharsInString);
+
+                    if (currentWriteableByte + stringLength > sizeOfFileToBeGenerated)
+                    {
+                        stringLength = (int) (sizeOfFileToBeGenerated - currentWriteableByte);
+                    }
 
                     for (int currentWritableWordInString = 0;
                         currentWritableWordInString < stringLength;
                         currentWritableWordInString++)
                     {
-                        for (int currentWritableCharInWord = 0;
-                            currentWritableCharInWord < wordLength;
-                            currentWritableCharInWord++)
-                        {
-                            streamWriter.Write(Alphabet[Random.Next(0, Alphabet.Length - 1)]);
+                        streamWriter.Write(Alphabet[Random.Next(0, Alphabet.Length - 1)]);
 
-                            currentWriteableByte++;
-                        }
-
-                        streamWriter.Write(' ');
                         currentWriteableByte++;
+                    }
+
+                    if (currentWriteableByte == sizeOfFileToBeGenerated)
+                    {
+                        continue;
                     }
 
                     streamWriter.Write('\n');
@@ -77,14 +75,9 @@ namespace TextSorterLib
         private static long GetFileSizeBasedOnEncoding(long sizeOfFileToBeGenerated, Encoding encoding)
         {
             if (Equals(encoding, Encoding.Unicode) || Equals(encoding, Encoding.BigEndianUnicode))
-            {
                 return sizeOfFileToBeGenerated / 2;
-            }
 
-            if (Equals(encoding, Encoding.UTF32))
-            {
-                return sizeOfFileToBeGenerated / 4;
-            }
+            if (Equals(encoding, Encoding.UTF32)) return sizeOfFileToBeGenerated / 4;
 
             return sizeOfFileToBeGenerated;
         }
