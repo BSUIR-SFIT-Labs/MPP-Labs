@@ -84,6 +84,8 @@ namespace TextSorterLib.Sorter
 
                 SplitFileIntoChunks(pathToSourceFile, 1);
                 MergeChunks(pathToSortedFile);
+
+                tempDirectoryInfo.Delete(true);
             }
         }
 
@@ -100,7 +102,8 @@ namespace TextSorterLib.Sorter
                     currentChunk.Value.Flush();
 
                     CopyFile(currentChunk.Value.FileName, fileStream);
-                    //File.Delete(currentChunk.Value.FileName);
+
+                    File.Delete(currentChunk.Value.FileName);
                 }
             }
         }
