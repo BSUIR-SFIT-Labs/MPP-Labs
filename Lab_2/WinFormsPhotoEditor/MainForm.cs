@@ -35,5 +35,12 @@ namespace WinFormsPhotoEditor
                 PbImage.Image = image;
             }
         }
+
+        private void BtnRotate_Click(object sender, EventArgs e)
+        {
+            var image = PbImage.Image;
+            image.RotateFlip(RotateFlipType.Rotate90FlipNone);
+            PbImage.Image = image;
+        }
     }
 }

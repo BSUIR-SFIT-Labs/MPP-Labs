@@ -31,6 +31,7 @@
             this.PbImage = new System.Windows.Forms.PictureBox();
             this.BtnLoadImage = new System.Windows.Forms.Button();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.BtnRotate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PbImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,11 +62,23 @@
             // 
             this.openFileDialog.FileName = "openFileDialog";
             // 
+            // BtnRotate
+            // 
+            this.BtnRotate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.BtnRotate.Location = new System.Drawing.Point(93, 406);
+            this.BtnRotate.Name = "BtnRotate";
+            this.BtnRotate.Size = new System.Drawing.Size(75, 23);
+            this.BtnRotate.TabIndex = 2;
+            this.BtnRotate.Text = "Rotate";
+            this.BtnRotate.UseVisualStyleBackColor = true;
+            this.BtnRotate.Click += new System.EventHandler(this.BtnRotate_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 441);
+            this.Controls.Add(this.BtnRotate);
             this.Controls.Add(this.BtnLoadImage);
             this.Controls.Add(this.PbImage);
             this.MinimumSize = new System.Drawing.Size(852, 480);
@@ -82,6 +95,7 @@
         private System.Windows.Forms.PictureBox PbImage;
         private System.Windows.Forms.Button BtnLoadImage;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.Button BtnRotate;
     }
 }
 
