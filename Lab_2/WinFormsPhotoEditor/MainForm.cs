@@ -1,17 +1,19 @@
-﻿using System;
-using System.Drawing;
+﻿using ImageEditorLib;
+using System;
 using System.Windows.Forms;
 
 namespace WinFormsPhotoEditor
 {
     public partial class MainForm : Form
     {
+        private ImageEditor _imageEditor;
+
         public MainForm()
         {
             InitializeComponent();
         }
 
-        private void BtnLoadImage_Click(object sender, EventArgs e)
+        private void MenuItemOpenImage_Click(object sender, EventArgs e)
         {
             openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             openFileDialog.Filter =
@@ -21,7 +23,8 @@ namespace WinFormsPhotoEditor
             {
                 string pathToSelectedFile = openFileDialog.FileName;
 
-                var image = Image.FromFile(pathToSelectedFile);
+                _imageEditor = new ImageEditor(pathToSelectedFile);
+                var image = _imageEditor.Image;
 
                 if (image.Width < PbImage.Width && image.Height < PbImage.Height)
                 {
@@ -36,11 +39,15 @@ namespace WinFormsPhotoEditor
             }
         }
 
-        private void BtnRotate_Click(object sender, EventArgs e)
+        private void BtnRotateTo90Degrees_Click(object sender, EventArgs e)
         {
-            var image = PbImage.Image;
-            image.RotateFlip(RotateFlipType.Rotate90FlipNone);
-            PbImage.Image = image;
+            PbImage.Image = _imageEditor?.Rotate(90);
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _imageEditor?.Dispose();
+            _imageEditor = null;
         }
     }
 }
