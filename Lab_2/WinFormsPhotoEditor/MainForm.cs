@@ -64,6 +64,11 @@ namespace WinFormsPhotoEditor
             PbImage.Image = _imageEditor?.ChangeHue(TbHue.Value);
         }
 
+        private void TbBrightness_Scroll(object sender, EventArgs e)
+        {
+            PbImage.Image = _imageEditor?.ChangeBrightness(TbBrightness.Value);
+        }
+
         private void ApplyChanges_Click(object sender, EventArgs e)
         {
             _imageEditor?.SaveToTempImage();
@@ -74,5 +79,6 @@ namespace WinFormsPhotoEditor
             _imageEditor?.Dispose();
             _imageEditor = null;
         }
+
     }
 }

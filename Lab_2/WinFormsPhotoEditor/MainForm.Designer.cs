@@ -45,11 +45,15 @@
             this.TbHue = new System.Windows.Forms.TrackBar();
             this.BtnSaveHue = new System.Windows.Forms.Button();
             this.BtnSaveRotation = new System.Windows.Forms.Button();
+            this.BtnApplyBrightnessChange = new System.Windows.Forms.Button();
+            this.TbBrightness = new System.Windows.Forms.TrackBar();
+            this.LblBrightness = new System.Windows.Forms.Label();
             this.Menu.SuspendLayout();
             this.GbOperations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NudDegreeToRotate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TbHue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TbBrightness)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog
@@ -104,6 +108,9 @@
             // 
             this.GbOperations.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.GbOperations.Controls.Add(this.BtnApplyBrightnessChange);
+            this.GbOperations.Controls.Add(this.TbBrightness);
+            this.GbOperations.Controls.Add(this.LblBrightness);
             this.GbOperations.Controls.Add(this.BtnSaveRotation);
             this.GbOperations.Controls.Add(this.BtnSaveHue);
             this.GbOperations.Controls.Add(this.TbHue);
@@ -246,6 +253,36 @@
             this.BtnSaveRotation.UseVisualStyleBackColor = true;
             this.BtnSaveRotation.Click += new System.EventHandler(this.ApplyChanges_Click);
             // 
+            // BtnApplyBrightnessChange
+            // 
+            this.BtnApplyBrightnessChange.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnApplyBrightnessChange.Location = new System.Drawing.Point(9, 240);
+            this.BtnApplyBrightnessChange.Name = "BtnApplyBrightnessChange";
+            this.BtnApplyBrightnessChange.Size = new System.Drawing.Size(239, 23);
+            this.BtnApplyBrightnessChange.TabIndex = 13;
+            this.BtnApplyBrightnessChange.Text = "Apply brightness changes";
+            this.BtnApplyBrightnessChange.UseVisualStyleBackColor = true;
+            this.BtnApplyBrightnessChange.Click += new System.EventHandler(this.ApplyChanges_Click);
+            // 
+            // TbBrightness
+            // 
+            this.TbBrightness.Location = new System.Drawing.Point(9, 207);
+            this.TbBrightness.Maximum = 100;
+            this.TbBrightness.Minimum = -100;
+            this.TbBrightness.Name = "TbBrightness";
+            this.TbBrightness.Size = new System.Drawing.Size(239, 45);
+            this.TbBrightness.TabIndex = 12;
+            this.TbBrightness.Scroll += new System.EventHandler(this.TbBrightness_Scroll);
+            // 
+            // LblBrightness
+            // 
+            this.LblBrightness.AutoSize = true;
+            this.LblBrightness.Location = new System.Drawing.Point(6, 191);
+            this.LblBrightness.Name = "LblBrightness";
+            this.LblBrightness.Size = new System.Drawing.Size(59, 13);
+            this.LblBrightness.TabIndex = 11;
+            this.LblBrightness.Text = "Brightness:";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,6 +303,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.NudDegreeToRotate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TbHue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TbBrightness)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,6 +328,9 @@
         private System.Windows.Forms.Label LblHue;
         private System.Windows.Forms.Button BtnSaveHue;
         private System.Windows.Forms.Button BtnSaveRotation;
+        private System.Windows.Forms.Button BtnApplyBrightnessChange;
+        private System.Windows.Forms.TrackBar TbBrightness;
+        private System.Windows.Forms.Label LblBrightness;
     }
 }
 

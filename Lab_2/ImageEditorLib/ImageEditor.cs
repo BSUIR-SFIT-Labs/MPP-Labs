@@ -44,6 +44,14 @@ namespace ImageEditorLib
             return _editor.Image;
         }
 
+        public Image ChangeBrightness(int percentage)
+        {
+            _editor.Load(_tempImage);
+            _editor.Brightness(percentage);
+
+            return _editor.Image;
+        }
+
         public void SaveToTempImage()
         {
             _tempImage = _editor.Image;
