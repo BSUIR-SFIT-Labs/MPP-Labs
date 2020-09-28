@@ -41,10 +41,15 @@
             this.BtnRotateTo90DegreesLeft = new System.Windows.Forms.Button();
             this.BtnRotateTo90DegreesRight = new System.Windows.Forms.Button();
             this.PbImage = new System.Windows.Forms.PictureBox();
+            this.LblHue = new System.Windows.Forms.Label();
+            this.TbHue = new System.Windows.Forms.TrackBar();
+            this.BtnSaveHue = new System.Windows.Forms.Button();
+            this.BtnSaveRotation = new System.Windows.Forms.Button();
             this.Menu.SuspendLayout();
             this.GbOperations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NudDegreeToRotate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TbHue)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog
@@ -99,14 +104,18 @@
             // 
             this.GbOperations.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.GbOperations.Controls.Add(this.BtnSaveRotation);
+            this.GbOperations.Controls.Add(this.BtnSaveHue);
+            this.GbOperations.Controls.Add(this.TbHue);
+            this.GbOperations.Controls.Add(this.LblHue);
             this.GbOperations.Controls.Add(this.BtnRotateToSpecDegreesRight);
             this.GbOperations.Controls.Add(this.NudDegreeToRotate);
             this.GbOperations.Controls.Add(this.BtnRotateTo90DegreesLeft);
             this.GbOperations.Controls.Add(this.LblRotation);
             this.GbOperations.Controls.Add(this.BtnRotateTo90DegreesRight);
-            this.GbOperations.Location = new System.Drawing.Point(599, 27);
+            this.GbOperations.Location = new System.Drawing.Point(570, 27);
             this.GbOperations.Name = "GbOperations";
-            this.GbOperations.Size = new System.Drawing.Size(225, 427);
+            this.GbOperations.Size = new System.Drawing.Size(254, 427);
             this.GbOperations.TabIndex = 4;
             this.GbOperations.TabStop = false;
             this.GbOperations.Text = "Operations";
@@ -122,7 +131,7 @@
             // 
             // NudDegreeToRotate
             // 
-            this.NudDegreeToRotate.Location = new System.Drawing.Point(148, 43);
+            this.NudDegreeToRotate.Location = new System.Drawing.Point(45, 43);
             this.NudDegreeToRotate.Maximum = new decimal(new int[] {
             360,
             0,
@@ -142,7 +151,7 @@
             this.BtnRotateToSpecDegreesRight.FlatAppearance.BorderSize = 0;
             this.BtnRotateToSpecDegreesRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRotateToSpecDegreesRight.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRotateToSpecDegreesRight.Location = new System.Drawing.Point(112, 37);
+            this.BtnRotateToSpecDegreesRight.Location = new System.Drawing.Point(9, 37);
             this.BtnRotateToSpecDegreesRight.Name = "BtnRotateToSpecDegreesRight";
             this.BtnRotateToSpecDegreesRight.Size = new System.Drawing.Size(30, 30);
             this.BtnRotateToSpecDegreesRight.TabIndex = 6;
@@ -159,7 +168,7 @@
             this.BtnRotateTo90DegreesLeft.FlatAppearance.BorderSize = 0;
             this.BtnRotateTo90DegreesLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRotateTo90DegreesLeft.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRotateTo90DegreesLeft.Location = new System.Drawing.Point(45, 37);
+            this.BtnRotateTo90DegreesLeft.Location = new System.Drawing.Point(45, 73);
             this.BtnRotateTo90DegreesLeft.Name = "BtnRotateTo90DegreesLeft";
             this.BtnRotateTo90DegreesLeft.Size = new System.Drawing.Size(30, 30);
             this.BtnRotateTo90DegreesLeft.TabIndex = 4;
@@ -177,7 +186,7 @@
             this.BtnRotateTo90DegreesRight.FlatAppearance.BorderSize = 0;
             this.BtnRotateTo90DegreesRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRotateTo90DegreesRight.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRotateTo90DegreesRight.Location = new System.Drawing.Point(9, 37);
+            this.BtnRotateTo90DegreesRight.Location = new System.Drawing.Point(9, 73);
             this.BtnRotateTo90DegreesRight.Name = "BtnRotateTo90DegreesRight";
             this.BtnRotateTo90DegreesRight.Size = new System.Drawing.Size(30, 30);
             this.BtnRotateTo90DegreesRight.TabIndex = 2;
@@ -192,10 +201,50 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PbImage.Location = new System.Drawing.Point(12, 27);
             this.PbImage.Name = "PbImage";
-            this.PbImage.Size = new System.Drawing.Size(581, 427);
+            this.PbImage.Size = new System.Drawing.Size(552, 427);
             this.PbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PbImage.TabIndex = 0;
             this.PbImage.TabStop = false;
+            // 
+            // LblHue
+            // 
+            this.LblHue.AutoSize = true;
+            this.LblHue.Location = new System.Drawing.Point(6, 111);
+            this.LblHue.Name = "LblHue";
+            this.LblHue.Size = new System.Drawing.Size(30, 13);
+            this.LblHue.TabIndex = 7;
+            this.LblHue.Text = "Hue:";
+            // 
+            // TbHue
+            // 
+            this.TbHue.Location = new System.Drawing.Point(9, 127);
+            this.TbHue.Maximum = 360;
+            this.TbHue.Name = "TbHue";
+            this.TbHue.Size = new System.Drawing.Size(239, 45);
+            this.TbHue.TabIndex = 8;
+            this.TbHue.Scroll += new System.EventHandler(this.TbHue_Scroll);
+            // 
+            // BtnSaveHue
+            // 
+            this.BtnSaveHue.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSaveHue.Location = new System.Drawing.Point(9, 160);
+            this.BtnSaveHue.Name = "BtnSaveHue";
+            this.BtnSaveHue.Size = new System.Drawing.Size(239, 23);
+            this.BtnSaveHue.TabIndex = 9;
+            this.BtnSaveHue.Text = "Apply hue changes";
+            this.BtnSaveHue.UseVisualStyleBackColor = true;
+            this.BtnSaveHue.Click += new System.EventHandler(this.ApplyChanges_Click);
+            // 
+            // BtnSaveRotation
+            // 
+            this.BtnSaveRotation.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSaveRotation.Location = new System.Drawing.Point(122, 40);
+            this.BtnSaveRotation.Name = "BtnSaveRotation";
+            this.BtnSaveRotation.Size = new System.Drawing.Size(126, 23);
+            this.BtnSaveRotation.TabIndex = 10;
+            this.BtnSaveRotation.Text = "Apply rotation changes";
+            this.BtnSaveRotation.UseVisualStyleBackColor = true;
+            this.BtnSaveRotation.Click += new System.EventHandler(this.ApplyChanges_Click);
             // 
             // MainForm
             // 
@@ -216,6 +265,7 @@
             this.GbOperations.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NudDegreeToRotate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TbHue)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,6 +286,10 @@
         private System.Windows.Forms.Button BtnRotateTo90DegreesLeft;
         private System.Windows.Forms.Button BtnRotateToSpecDegreesRight;
         private System.Windows.Forms.NumericUpDown NudDegreeToRotate;
+        private System.Windows.Forms.TrackBar TbHue;
+        private System.Windows.Forms.Label LblHue;
+        private System.Windows.Forms.Button BtnSaveHue;
+        private System.Windows.Forms.Button BtnSaveRotation;
     }
 }
 

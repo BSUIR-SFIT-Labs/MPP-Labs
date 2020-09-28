@@ -17,13 +17,13 @@ namespace ImageEditorLib
             _editor = new ImageFactory();
             _editor.Load(pathToImage);
 
-            SaveImageInstance(_editor.Image);
+            SaveToTempImage();
         }
 
         public Image Rotate(float degrees)
         {
             _editor.Rotate(degrees);
-            SaveImageInstance(_editor.Image);
+            SaveToTempImage();
 
             return _editor.Image;
         }
@@ -36,9 +36,17 @@ namespace ImageEditorLib
             return _editor.Image;
         }
 
-        private void SaveImageInstance(Image image)
+        public Image ChangeHue(int degrees)
         {
-            _tempImage = image;
+            _editor.Load(_tempImage);
+            _editor.Hue(degrees);
+
+            return _editor.Image;
+        }
+
+        public void SaveToTempImage()
+        {
+            _tempImage = _editor.Image;
         }
 
         public void Dispose()

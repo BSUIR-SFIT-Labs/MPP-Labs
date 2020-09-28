@@ -59,6 +59,16 @@ namespace WinFormsPhotoEditor
 
         #endregion
 
+        private void TbHue_Scroll(object sender, EventArgs e)
+        {
+            PbImage.Image = _imageEditor?.ChangeHue(TbHue.Value);
+        }
+
+        private void ApplyChanges_Click(object sender, EventArgs e)
+        {
+            _imageEditor?.SaveToTempImage();
+        }
+
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             _imageEditor?.Dispose();
