@@ -48,12 +48,16 @@
             this.BtnApplyBrightnessChange = new System.Windows.Forms.Button();
             this.TbBrightness = new System.Windows.Forms.TrackBar();
             this.LblBrightness = new System.Windows.Forms.Label();
+            this.BtnChangeContrast = new System.Windows.Forms.Button();
+            this.TbContrast = new System.Windows.Forms.TrackBar();
+            this.LblContrast = new System.Windows.Forms.Label();
             this.Menu.SuspendLayout();
             this.GbOperations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NudDegreeToRotate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TbHue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TbBrightness)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TbContrast)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog
@@ -108,6 +112,9 @@
             // 
             this.GbOperations.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.GbOperations.Controls.Add(this.BtnChangeContrast);
+            this.GbOperations.Controls.Add(this.TbContrast);
+            this.GbOperations.Controls.Add(this.LblContrast);
             this.GbOperations.Controls.Add(this.BtnApplyBrightnessChange);
             this.GbOperations.Controls.Add(this.TbBrightness);
             this.GbOperations.Controls.Add(this.LblBrightness);
@@ -283,6 +290,36 @@
             this.LblBrightness.TabIndex = 11;
             this.LblBrightness.Text = "Brightness:";
             // 
+            // BtnChangeContrast
+            // 
+            this.BtnChangeContrast.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnChangeContrast.Location = new System.Drawing.Point(9, 320);
+            this.BtnChangeContrast.Name = "BtnChangeContrast";
+            this.BtnChangeContrast.Size = new System.Drawing.Size(239, 23);
+            this.BtnChangeContrast.TabIndex = 16;
+            this.BtnChangeContrast.Text = "Apply brightness changes";
+            this.BtnChangeContrast.UseVisualStyleBackColor = true;
+            this.BtnChangeContrast.Click += new System.EventHandler(this.ApplyChanges_Click);
+            // 
+            // TbContrast
+            // 
+            this.TbContrast.Location = new System.Drawing.Point(9, 287);
+            this.TbContrast.Maximum = 100;
+            this.TbContrast.Minimum = -100;
+            this.TbContrast.Name = "TbContrast";
+            this.TbContrast.Size = new System.Drawing.Size(239, 45);
+            this.TbContrast.TabIndex = 15;
+            this.TbContrast.Scroll += new System.EventHandler(this.TbContrast_Scroll);
+            // 
+            // LblContrast
+            // 
+            this.LblContrast.AutoSize = true;
+            this.LblContrast.Location = new System.Drawing.Point(6, 271);
+            this.LblContrast.Name = "LblContrast";
+            this.LblContrast.Size = new System.Drawing.Size(49, 13);
+            this.LblContrast.TabIndex = 14;
+            this.LblContrast.Text = "Contrast:";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,6 +341,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TbHue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TbBrightness)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TbContrast)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,6 +369,9 @@
         private System.Windows.Forms.Button BtnApplyBrightnessChange;
         private System.Windows.Forms.TrackBar TbBrightness;
         private System.Windows.Forms.Label LblBrightness;
+        private System.Windows.Forms.Button BtnChangeContrast;
+        private System.Windows.Forms.TrackBar TbContrast;
+        private System.Windows.Forms.Label LblContrast;
     }
 }
 

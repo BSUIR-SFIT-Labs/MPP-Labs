@@ -69,6 +69,11 @@ namespace WinFormsPhotoEditor
             PbImage.Image = _imageEditor?.ChangeBrightness(TbBrightness.Value);
         }
 
+        private void TbContrast_Scroll(object sender, EventArgs e)
+        {
+            PbImage.Image = _imageEditor?.ChangeContrast(TbContrast.Value);
+        }
+
         private void ApplyChanges_Click(object sender, EventArgs e)
         {
             _imageEditor?.SaveToTempImage();
@@ -79,6 +84,5 @@ namespace WinFormsPhotoEditor
             _imageEditor?.Dispose();
             _imageEditor = null;
         }
-
     }
 }
