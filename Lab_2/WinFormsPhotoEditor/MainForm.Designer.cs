@@ -36,10 +36,14 @@
             this.MenuItemSaveAsImage = new System.Windows.Forms.ToolStripMenuItem();
             this.GbOperations = new System.Windows.Forms.GroupBox();
             this.LblRotation = new System.Windows.Forms.Label();
-            this.BtnRotateTo90Degrees = new System.Windows.Forms.Button();
+            this.NudDegreeToRotate = new System.Windows.Forms.NumericUpDown();
+            this.BtnRotateToSpecDegreesRight = new System.Windows.Forms.Button();
+            this.BtnRotateTo90DegreesLeft = new System.Windows.Forms.Button();
+            this.BtnRotateTo90DegreesRight = new System.Windows.Forms.Button();
             this.PbImage = new System.Windows.Forms.PictureBox();
             this.Menu.SuspendLayout();
             this.GbOperations.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NudDegreeToRotate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,8 +99,11 @@
             // 
             this.GbOperations.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.GbOperations.Controls.Add(this.BtnRotateToSpecDegreesRight);
+            this.GbOperations.Controls.Add(this.NudDegreeToRotate);
+            this.GbOperations.Controls.Add(this.BtnRotateTo90DegreesLeft);
             this.GbOperations.Controls.Add(this.LblRotation);
-            this.GbOperations.Controls.Add(this.BtnRotateTo90Degrees);
+            this.GbOperations.Controls.Add(this.BtnRotateTo90DegreesRight);
             this.GbOperations.Location = new System.Drawing.Point(599, 27);
             this.GbOperations.Name = "GbOperations";
             this.GbOperations.Size = new System.Drawing.Size(225, 427);
@@ -113,23 +120,70 @@
             this.LblRotation.TabIndex = 3;
             this.LblRotation.Text = "Rotation:";
             // 
-            // BtnRotateTo90Degrees
+            // NudDegreeToRotate
             // 
-            this.BtnRotateTo90Degrees.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnRotateTo90Degrees.BackColor = System.Drawing.Color.Transparent;
-            this.BtnRotateTo90Degrees.BackgroundImage = global::WinFormsPhotoEditor.Resources.RotateRightImage;
-            this.BtnRotateTo90Degrees.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BtnRotateTo90Degrees.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnRotateTo90Degrees.FlatAppearance.BorderSize = 0;
-            this.BtnRotateTo90Degrees.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnRotateTo90Degrees.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRotateTo90Degrees.Location = new System.Drawing.Point(9, 37);
-            this.BtnRotateTo90Degrees.Name = "BtnRotateTo90Degrees";
-            this.BtnRotateTo90Degrees.Size = new System.Drawing.Size(30, 30);
-            this.BtnRotateTo90Degrees.TabIndex = 2;
-            this.BtnRotateTo90Degrees.Text = "90";
-            this.BtnRotateTo90Degrees.UseVisualStyleBackColor = false;
-            this.BtnRotateTo90Degrees.Click += new System.EventHandler(this.BtnRotateTo90Degrees_Click);
+            this.NudDegreeToRotate.Location = new System.Drawing.Point(148, 43);
+            this.NudDegreeToRotate.Maximum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            0});
+            this.NudDegreeToRotate.Name = "NudDegreeToRotate";
+            this.NudDegreeToRotate.Size = new System.Drawing.Size(71, 20);
+            this.NudDegreeToRotate.TabIndex = 5;
+            // 
+            // BtnRotateToSpecDegreesRight
+            // 
+            this.BtnRotateToSpecDegreesRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnRotateToSpecDegreesRight.BackColor = System.Drawing.Color.Transparent;
+            this.BtnRotateToSpecDegreesRight.BackgroundImage = global::WinFormsPhotoEditor.Resources.RotateToDegreesRightImage;
+            this.BtnRotateToSpecDegreesRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnRotateToSpecDegreesRight.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnRotateToSpecDegreesRight.FlatAppearance.BorderSize = 0;
+            this.BtnRotateToSpecDegreesRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnRotateToSpecDegreesRight.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRotateToSpecDegreesRight.Location = new System.Drawing.Point(112, 37);
+            this.BtnRotateToSpecDegreesRight.Name = "BtnRotateToSpecDegreesRight";
+            this.BtnRotateToSpecDegreesRight.Size = new System.Drawing.Size(30, 30);
+            this.BtnRotateToSpecDegreesRight.TabIndex = 6;
+            this.BtnRotateToSpecDegreesRight.UseVisualStyleBackColor = false;
+            this.BtnRotateToSpecDegreesRight.Click += new System.EventHandler(this.BtnRotateToSpecDegreesRight_Click);
+            // 
+            // BtnRotateTo90DegreesLeft
+            // 
+            this.BtnRotateTo90DegreesLeft.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnRotateTo90DegreesLeft.BackColor = System.Drawing.Color.Transparent;
+            this.BtnRotateTo90DegreesLeft.BackgroundImage = global::WinFormsPhotoEditor.Resources.RotateLeftImage;
+            this.BtnRotateTo90DegreesLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnRotateTo90DegreesLeft.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnRotateTo90DegreesLeft.FlatAppearance.BorderSize = 0;
+            this.BtnRotateTo90DegreesLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnRotateTo90DegreesLeft.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRotateTo90DegreesLeft.Location = new System.Drawing.Point(45, 37);
+            this.BtnRotateTo90DegreesLeft.Name = "BtnRotateTo90DegreesLeft";
+            this.BtnRotateTo90DegreesLeft.Size = new System.Drawing.Size(30, 30);
+            this.BtnRotateTo90DegreesLeft.TabIndex = 4;
+            this.BtnRotateTo90DegreesLeft.Text = "90";
+            this.BtnRotateTo90DegreesLeft.UseVisualStyleBackColor = false;
+            this.BtnRotateTo90DegreesLeft.Click += new System.EventHandler(this.BtnRotateTo90DegreesLeft_Click);
+            // 
+            // BtnRotateTo90DegreesRight
+            // 
+            this.BtnRotateTo90DegreesRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnRotateTo90DegreesRight.BackColor = System.Drawing.Color.Transparent;
+            this.BtnRotateTo90DegreesRight.BackgroundImage = global::WinFormsPhotoEditor.Resources.RotateRightImage;
+            this.BtnRotateTo90DegreesRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnRotateTo90DegreesRight.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnRotateTo90DegreesRight.FlatAppearance.BorderSize = 0;
+            this.BtnRotateTo90DegreesRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnRotateTo90DegreesRight.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRotateTo90DegreesRight.Location = new System.Drawing.Point(9, 37);
+            this.BtnRotateTo90DegreesRight.Name = "BtnRotateTo90DegreesRight";
+            this.BtnRotateTo90DegreesRight.Size = new System.Drawing.Size(30, 30);
+            this.BtnRotateTo90DegreesRight.TabIndex = 2;
+            this.BtnRotateTo90DegreesRight.Text = "90";
+            this.BtnRotateTo90DegreesRight.UseVisualStyleBackColor = false;
+            this.BtnRotateTo90DegreesRight.Click += new System.EventHandler(this.BtnRotateTo90DegreesRight_Click);
             // 
             // PbImage
             // 
@@ -160,6 +214,7 @@
             this.Menu.PerformLayout();
             this.GbOperations.ResumeLayout(false);
             this.GbOperations.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NudDegreeToRotate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -170,7 +225,7 @@
 
         private System.Windows.Forms.PictureBox PbImage;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
-        private System.Windows.Forms.Button BtnRotateTo90Degrees;
+        private System.Windows.Forms.Button BtnRotateTo90DegreesRight;
         private new System.Windows.Forms.MenuStrip Menu;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MenuItemOpenImage;
@@ -178,6 +233,9 @@
         private System.Windows.Forms.ToolStripMenuItem MenuItemSaveAsImage;
         private System.Windows.Forms.GroupBox GbOperations;
         private System.Windows.Forms.Label LblRotation;
+        private System.Windows.Forms.Button BtnRotateTo90DegreesLeft;
+        private System.Windows.Forms.Button BtnRotateToSpecDegreesRight;
+        private System.Windows.Forms.NumericUpDown NudDegreeToRotate;
     }
 }
 

@@ -39,10 +39,25 @@ namespace WinFormsPhotoEditor
             }
         }
 
-        private void BtnRotateTo90Degrees_Click(object sender, EventArgs e)
+        #region Image rotation
+
+        private void BtnRotateTo90DegreesRight_Click(object sender, EventArgs e)
         {
             PbImage.Image = _imageEditor?.Rotate(90);
         }
+
+        private void BtnRotateTo90DegreesLeft_Click(object sender, EventArgs e)
+        {
+            PbImage.Image = _imageEditor?.Rotate(-90);
+        }
+
+        private void BtnRotateToSpecDegreesRight_Click(object sender, EventArgs e)
+        {
+            PbImage.Image = _imageEditor?.RotateManyTimes((float)NudDegreeToRotate.Value);
+        }
+
+
+        #endregion
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {

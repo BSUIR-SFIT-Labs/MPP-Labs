@@ -28,6 +28,14 @@ namespace ImageEditorLib
             return _editor.Image;
         }
 
+        public Image RotateManyTimes(float degrees)
+        {
+            _editor.Load(_tempImage);
+            _editor.Rotate(degrees);
+
+            return _editor.Image;
+        }
+
         private void SaveImageInstance(Image image)
         {
             _tempImage = image;
