@@ -88,7 +88,7 @@
             this.fileToolStripMenuItem});
             this.Menu.Location = new System.Drawing.Point(0, 0);
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(1084, 24);
+            this.Menu.Size = new System.Drawing.Size(1184, 24);
             this.Menu.TabIndex = 3;
             this.Menu.Text = "menuStrip1";
             // 
@@ -160,7 +160,7 @@
             this.GbOperations.Controls.Add(this.BtnRotateTo90DegreesLeft);
             this.GbOperations.Controls.Add(this.LblRotation);
             this.GbOperations.Controls.Add(this.BtnRotateTo90DegreesRight);
-            this.GbOperations.Location = new System.Drawing.Point(818, 27);
+            this.GbOperations.Location = new System.Drawing.Point(918, 27);
             this.GbOperations.Name = "GbOperations";
             this.GbOperations.Size = new System.Drawing.Size(254, 722);
             this.GbOperations.TabIndex = 4;
@@ -170,6 +170,7 @@
             // BtnReset
             // 
             this.BtnReset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnReset.Enabled = false;
             this.BtnReset.Location = new System.Drawing.Point(9, 693);
             this.BtnReset.Name = "BtnReset";
             this.BtnReset.Size = new System.Drawing.Size(237, 23);
@@ -185,6 +186,7 @@
             this.BtnHorizontalFlip.BackgroundImage = global::WinFormsPhotoEditor.Resources.HorizontalFlip;
             this.BtnHorizontalFlip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BtnHorizontalFlip.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnHorizontalFlip.Enabled = false;
             this.BtnHorizontalFlip.FlatAppearance.BorderSize = 0;
             this.BtnHorizontalFlip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnHorizontalFlip.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -217,6 +219,7 @@
             // BtnSaveFilters
             // 
             this.BtnSaveFilters.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSaveFilters.Enabled = false;
             this.BtnSaveFilters.Location = new System.Drawing.Point(9, 644);
             this.BtnSaveFilters.Name = "BtnSaveFilters";
             this.BtnSaveFilters.Size = new System.Drawing.Size(239, 23);
@@ -230,6 +233,7 @@
             this.BtnSepiaFilter.BackgroundImage = global::WinFormsPhotoEditor.Resources.Sepia;
             this.BtnSepiaFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnSepiaFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSepiaFilter.Enabled = false;
             this.BtnSepiaFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSepiaFilter.Location = new System.Drawing.Point(171, 588);
             this.BtnSepiaFilter.Name = "BtnSepiaFilter";
@@ -244,6 +248,7 @@
             this.BtnPolaroidFilter.BackgroundImage = global::WinFormsPhotoEditor.Resources.Polaroid;
             this.BtnPolaroidFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnPolaroidFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnPolaroidFilter.Enabled = false;
             this.BtnPolaroidFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPolaroidFilter.Location = new System.Drawing.Point(90, 588);
             this.BtnPolaroidFilter.Name = "BtnPolaroidFilter";
@@ -258,6 +263,7 @@
             this.BtnInvertFilter.BackgroundImage = global::WinFormsPhotoEditor.Resources.Invert;
             this.BtnInvertFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnInvertFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnInvertFilter.Enabled = false;
             this.BtnInvertFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnInvertFilter.Location = new System.Drawing.Point(9, 588);
             this.BtnInvertFilter.Name = "BtnInvertFilter";
@@ -272,6 +278,7 @@
             this.BtnGothamFilter.BackgroundImage = global::WinFormsPhotoEditor.Resources.Gotham;
             this.BtnGothamFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnGothamFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnGothamFilter.Enabled = false;
             this.BtnGothamFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnGothamFilter.Location = new System.Drawing.Point(171, 532);
             this.BtnGothamFilter.Name = "BtnGothamFilter";
@@ -286,6 +293,7 @@
             this.BtnComicFilter.BackgroundImage = global::WinFormsPhotoEditor.Resources.Comic;
             this.BtnComicFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnComicFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnComicFilter.Enabled = false;
             this.BtnComicFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnComicFilter.Location = new System.Drawing.Point(90, 532);
             this.BtnComicFilter.Name = "BtnComicFilter";
@@ -300,6 +308,7 @@
             this.BtnBlackWhiteFilter.BackgroundImage = global::WinFormsPhotoEditor.Resources.BlackWhiteFilter;
             this.BtnBlackWhiteFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnBlackWhiteFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnBlackWhiteFilter.Enabled = false;
             this.BtnBlackWhiteFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnBlackWhiteFilter.Location = new System.Drawing.Point(9, 532);
             this.BtnBlackWhiteFilter.Name = "BtnBlackWhiteFilter";
@@ -321,6 +330,7 @@
             // BtnSaveContrast
             // 
             this.BtnSaveContrast.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSaveContrast.Enabled = false;
             this.BtnSaveContrast.Location = new System.Drawing.Point(9, 403);
             this.BtnSaveContrast.Name = "BtnSaveContrast";
             this.BtnSaveContrast.Size = new System.Drawing.Size(239, 23);
@@ -331,6 +341,7 @@
             // 
             // TbContrast
             // 
+            this.TbContrast.Enabled = false;
             this.TbContrast.Location = new System.Drawing.Point(9, 370);
             this.TbContrast.Maximum = 100;
             this.TbContrast.Minimum = -100;
@@ -351,6 +362,7 @@
             // BtnSaveBrightness
             // 
             this.BtnSaveBrightness.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSaveBrightness.Enabled = false;
             this.BtnSaveBrightness.Location = new System.Drawing.Point(9, 323);
             this.BtnSaveBrightness.Name = "BtnSaveBrightness";
             this.BtnSaveBrightness.Size = new System.Drawing.Size(239, 23);
@@ -361,6 +373,7 @@
             // 
             // TbBrightness
             // 
+            this.TbBrightness.Enabled = false;
             this.TbBrightness.Location = new System.Drawing.Point(9, 290);
             this.TbBrightness.Maximum = 100;
             this.TbBrightness.Minimum = -100;
@@ -381,6 +394,7 @@
             // BtnSaveRotation
             // 
             this.BtnSaveRotation.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSaveRotation.Enabled = false;
             this.BtnSaveRotation.Location = new System.Drawing.Point(122, 40);
             this.BtnSaveRotation.Name = "BtnSaveRotation";
             this.BtnSaveRotation.Size = new System.Drawing.Size(126, 23);
@@ -392,6 +406,7 @@
             // BtnSaveHue
             // 
             this.BtnSaveHue.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSaveHue.Enabled = false;
             this.BtnSaveHue.Location = new System.Drawing.Point(9, 243);
             this.BtnSaveHue.Name = "BtnSaveHue";
             this.BtnSaveHue.Size = new System.Drawing.Size(239, 23);
@@ -402,6 +417,7 @@
             // 
             // TbHue
             // 
+            this.TbHue.Enabled = false;
             this.TbHue.Location = new System.Drawing.Point(9, 177);
             this.TbHue.Maximum = 360;
             this.TbHue.Name = "TbHue";
@@ -425,6 +441,7 @@
             this.BtnRotateToSpecDegreesRight.BackgroundImage = global::WinFormsPhotoEditor.Resources.RotateToDegreesRightImage;
             this.BtnRotateToSpecDegreesRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BtnRotateToSpecDegreesRight.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnRotateToSpecDegreesRight.Enabled = false;
             this.BtnRotateToSpecDegreesRight.FlatAppearance.BorderSize = 0;
             this.BtnRotateToSpecDegreesRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRotateToSpecDegreesRight.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -437,6 +454,7 @@
             // 
             // NudDegreeToRotate
             // 
+            this.NudDegreeToRotate.Enabled = false;
             this.NudDegreeToRotate.Location = new System.Drawing.Point(45, 43);
             this.NudDegreeToRotate.Maximum = new decimal(new int[] {
             360,
@@ -454,6 +472,7 @@
             this.BtnRotateTo90DegreesLeft.BackgroundImage = global::WinFormsPhotoEditor.Resources.RotateLeftImage;
             this.BtnRotateTo90DegreesLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BtnRotateTo90DegreesLeft.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnRotateTo90DegreesLeft.Enabled = false;
             this.BtnRotateTo90DegreesLeft.FlatAppearance.BorderSize = 0;
             this.BtnRotateTo90DegreesLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRotateTo90DegreesLeft.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -481,6 +500,7 @@
             this.BtnRotateTo90DegreesRight.BackgroundImage = global::WinFormsPhotoEditor.Resources.RotateRightImage;
             this.BtnRotateTo90DegreesRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BtnRotateTo90DegreesRight.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnRotateTo90DegreesRight.Enabled = false;
             this.BtnRotateTo90DegreesRight.FlatAppearance.BorderSize = 0;
             this.BtnRotateTo90DegreesRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRotateTo90DegreesRight.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -499,7 +519,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PbImage.Location = new System.Drawing.Point(12, 27);
             this.PbImage.Name = "PbImage";
-            this.PbImage.Size = new System.Drawing.Size(800, 722);
+            this.PbImage.Size = new System.Drawing.Size(900, 722);
             this.PbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PbImage.TabIndex = 0;
             this.PbImage.TabStop = false;
@@ -511,6 +531,7 @@
             this.BtnVerticalFlip.BackgroundImage = global::WinFormsPhotoEditor.Resources.VerticalFlip;
             this.BtnVerticalFlip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.BtnVerticalFlip.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnVerticalFlip.Enabled = false;
             this.BtnVerticalFlip.FlatAppearance.BorderSize = 0;
             this.BtnVerticalFlip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnVerticalFlip.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -532,6 +553,7 @@
             // 
             // TbSaturation
             // 
+            this.TbSaturation.Enabled = false;
             this.TbSaturation.Location = new System.Drawing.Point(9, 450);
             this.TbSaturation.Maximum = 100;
             this.TbSaturation.Minimum = -100;
@@ -543,6 +565,7 @@
             // btnSaveSaturation
             // 
             this.btnSaveSaturation.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveSaturation.Enabled = false;
             this.btnSaveSaturation.Location = new System.Drawing.Point(9, 485);
             this.btnSaveSaturation.Name = "btnSaveSaturation";
             this.btnSaveSaturation.Size = new System.Drawing.Size(239, 23);
@@ -555,11 +578,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 761);
+            this.ClientSize = new System.Drawing.Size(1184, 761);
             this.Controls.Add(this.GbOperations);
             this.Controls.Add(this.PbImage);
             this.Controls.Add(this.Menu);
-            this.MinimumSize = new System.Drawing.Size(1000, 650);
+            this.MinimumSize = new System.Drawing.Size(1200, 800);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Photo editor";

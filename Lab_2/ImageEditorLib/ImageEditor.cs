@@ -9,6 +9,7 @@ namespace ImageEditorLib
     {
         private readonly ImageFactory _editor;
 
+        private Image _startImage;
         private Image _tempImage;
 
         public ImageEditor(string pathToImage)
@@ -16,16 +17,12 @@ namespace ImageEditorLib
             _editor = new ImageFactory();
             _editor.Load(pathToImage);
 
+            _startImage = _editor.Image;
+
             SaveToTempImage();
         }
 
         public Image Image => _editor.Image;
-
-        public void Dispose()
-        {
-            _editor?.Dispose();
-            _tempImage?.Dispose();
-        }
 
         public Image Rotate(float degrees)
         {
@@ -39,6 +36,14 @@ namespace ImageEditorLib
         {
             _editor.Load(_tempImage);
             _editor.Rotate(degrees);
+
+            return _editor.Image;
+        }
+
+        public Image FlipImage(bool isVerticalFlip)
+        {
+            _editor.Flip(isVerticalFlip);
+            SaveToTempImage();
 
             return _editor.Image;
         }
@@ -63,6 +68,14 @@ namespace ImageEditorLib
         {
             _editor.Load(_tempImage);
             _editor.Contrast(percentage);
+
+            return _editor.Image;
+        }
+
+        public Image ChangeSaturation(int percentage)
+        {
+            _editor.Load(_tempImage);
+            _editor.Saturation(percentage);
 
             return _editor.Image;
         }
@@ -102,9 +115,23 @@ namespace ImageEditorLib
             return _editor.Image;
         }
 
+        public Image Reset()
+        {
+            _editor.Load(_startImage);
+            SaveToTempImage();
+
+            return _editor.Image;
+        }
+
         public void SaveToTempImage()
         {
             _tempImage = _editor.Image;
+        }
+
+        public void Dispose()
+        {
+            _editor?.Dispose();
+            _tempImage?.Dispose();
         }
     }
 }

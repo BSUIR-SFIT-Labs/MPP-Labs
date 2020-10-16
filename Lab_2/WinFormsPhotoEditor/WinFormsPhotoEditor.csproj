@@ -112,7 +112,6 @@
     <None Include="Resources\Invert.jpg" />
     <None Include="Resources\Polaroid.jpg" />
     <None Include="Resources\Gradient.png" />
-    <None Include="Resources\Flip.png" />
     <None Include="Resources\HorizontalFlip.png" />
     <Content Include="Resources\RotateLeftImage.png" />
     <Content Include="Resources\RotateRightImage.png" />

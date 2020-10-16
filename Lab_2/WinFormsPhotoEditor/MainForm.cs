@@ -31,6 +31,9 @@ namespace WinFormsPhotoEditor
                 else
                     PbImage.SizeMode = PictureBoxSizeMode.Zoom;
 
+                ResetAllControls();
+                EnableAllControls();
+
                 PbImage.Image = image;
             }
         }
@@ -103,6 +106,50 @@ namespace WinFormsPhotoEditor
         private void BtnReset_Click(object sender, EventArgs e)
         {
             PbImage.Image = _imageEditor?.Reset();
+            ResetAllControls();
+        }
+
+        private void ResetAllControls()
+        {
+            NudDegreeToRotate.Value = 0;
+            TbHue.Value = 0;
+            TbBrightness.Value = 0;
+            TbContrast.Value = 0;
+            TbSaturation.Value = 0;
+        }
+
+        private void EnableAllControls()
+        {
+            BtnRotateToSpecDegreesRight.Enabled = true;
+            NudDegreeToRotate.Enabled = true;
+            BtnSaveRotation.Enabled = true;
+            BtnRotateTo90DegreesLeft.Enabled = true;
+            BtnRotateTo90DegreesRight.Enabled = true;
+
+            BtnHorizontalFlip.Enabled = true;
+            BtnVerticalFlip.Enabled = true;
+
+            TbHue.Enabled = true;
+            BtnSaveHue.Enabled = true;
+
+            TbBrightness.Enabled = true;
+            BtnSaveBrightness.Enabled = true;
+
+            TbContrast.Enabled = true;
+            BtnSaveContrast.Enabled = true;
+
+            TbSaturation.Enabled = true;
+            btnSaveSaturation.Enabled = true;
+
+            BtnBlackWhiteFilter.Enabled = true;
+            BtnComicFilter.Enabled = true;
+            BtnGothamFilter.Enabled = true;
+            BtnInvertFilter.Enabled = true;
+            BtnPolaroidFilter.Enabled = true;
+            BtnSepiaFilter.Enabled = true;
+            BtnSaveFilters.Enabled = true;
+
+            BtnReset.Enabled = true;
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
