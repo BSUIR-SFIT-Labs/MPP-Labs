@@ -54,6 +54,16 @@ namespace WinFormsPhotoEditor
 
         #endregion
 
+        private void BtnHorizontalFlip_Click(object sender, EventArgs e)
+        {
+            PbImage.Image = _imageEditor?.FlipImage(false);
+        }
+
+        private void BtnVerticalFlip_Click(object sender, EventArgs e)
+        {
+            PbImage.Image = _imageEditor?.FlipImage(true);
+        }
+
         private void TbHue_Scroll(object sender, EventArgs e)
         {
             PbImage.Image = _imageEditor?.ChangeHue(TbHue.Value);
@@ -69,25 +79,20 @@ namespace WinFormsPhotoEditor
             PbImage.Image = _imageEditor?.ChangeContrast(TbContrast.Value);
         }
 
+        private void TbSaturation_Scroll(object sender, EventArgs e)
+        {
+            PbImage.Image = _imageEditor.ChangeSaturation(TbSaturation.Value);
+        }
+
         private void BtnApplyFilter_Click(object sender, EventArgs e)
         {
             int buttonTag = Convert.ToInt32((sender as Button)?.Tag);
 
             if (buttonTag > 0)
             {
-                var filter = (ImageFilters) buttonTag;
+                var filter = (ImageFilters)buttonTag;
                 PbImage.Image = _imageEditor?.ApplyFilter(filter);
             }
-        }
-
-        private void BtnHorizontalFlip_Click(object sender, EventArgs e)
-        {
-            PbImage.Image = _imageEditor?.FlipImage(false);
-        }
-
-        private void BtnVerticalFlip_Click(object sender, EventArgs e)
-        {
-            PbImage.Image = _imageEditor?.FlipImage(true);
         }
 
         private void ApplyChanges_Click(object sender, EventArgs e)
@@ -95,15 +100,15 @@ namespace WinFormsPhotoEditor
             _imageEditor?.SaveToTempImage();
         }
 
+        private void BtnReset_Click(object sender, EventArgs e)
+        {
+            PbImage.Image = _imageEditor?.Reset();
+        }
+
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             _imageEditor?.Dispose();
             _imageEditor = null;
-        }
-
-        private void BtnReset_Click(object sender, EventArgs e)
-        {
-            PbImage.Image = _imageEditor?.Reset();
         }
     }
 }
