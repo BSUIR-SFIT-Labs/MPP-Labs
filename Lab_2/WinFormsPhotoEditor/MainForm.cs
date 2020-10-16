@@ -1,6 +1,5 @@
 ﻿using ImageEditorLib;
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace WinFormsPhotoEditor
@@ -28,13 +27,9 @@ namespace WinFormsPhotoEditor
                 var image = _imageEditor.Image;
 
                 if (image.Width < PbImage.Width && image.Height < PbImage.Height)
-                {
                     PbImage.SizeMode = PictureBoxSizeMode.CenterImage;
-                }
                 else
-                {
                     PbImage.SizeMode = PictureBoxSizeMode.Zoom;
-                }
 
                 PbImage.Image = image;
             }
@@ -57,7 +52,6 @@ namespace WinFormsPhotoEditor
             PbImage.Image = _imageEditor?.RotateManyTimes((float)NudDegreeToRotate.Value);
         }
 
-
         #endregion
 
         private void TbHue_Scroll(object sender, EventArgs e)
@@ -73,6 +67,17 @@ namespace WinFormsPhotoEditor
         private void TbContrast_Scroll(object sender, EventArgs e)
         {
             PbImage.Image = _imageEditor?.ChangeContrast(TbContrast.Value);
+        }
+
+        private void BtnApplyFilter_Click(object sender, EventArgs e)
+        {
+            int buttonTag = Convert.ToInt32((sender as Button)?.Tag);
+
+            if (buttonTag > 0)
+            {
+                var filter = (ImageFilters) buttonTag;
+                PbImage.Image = _imageEditor?.ApplyFilter(filter);
+            }
         }
 
         private void ApplyChanges_Click(object sender, EventArgs e)

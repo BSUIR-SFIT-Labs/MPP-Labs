@@ -104,6 +104,12 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\Sepia.jpg" />
+    <None Include="Resources\BlackWhiteFilter.jpg" />
+    <None Include="Resources\Comic.jpg" />
+    <None Include="Resources\Gotham.jpg" />
+    <None Include="Resources\Invert.jpg" />
+    <None Include="Resources\Polaroid.jpg" />
     <Content Include="Resources\RotateLeftImage.png" />
     <Content Include="Resources\RotateRightImage.png" />
     <None Include="Resources\RotateToDegreesRightImage.png" />

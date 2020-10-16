@@ -1,4 +1,5 @@
 ﻿using ImageProcessor;
+using ImageProcessor.Imaging.Filters.Photo;
 using System;
 using System.Drawing;
 
@@ -10,14 +11,20 @@ namespace ImageEditorLib
 
         private Image _tempImage;
 
-        public Image Image => _editor.Image;
-
         public ImageEditor(string pathToImage)
         {
             _editor = new ImageFactory();
             _editor.Load(pathToImage);
 
             SaveToTempImage();
+        }
+
+        public Image Image => _editor.Image;
+
+        public void Dispose()
+        {
+            _editor?.Dispose();
+            _tempImage?.Dispose();
         }
 
         public Image Rotate(float degrees)
@@ -60,15 +67,44 @@ namespace ImageEditorLib
             return _editor.Image;
         }
 
+        public Image ApplyFilter(ImageFilters imageFilters)
+        {
+            _editor.Load(_tempImage);
+
+            IMatrixFilter filter;
+
+            switch (imageFilters)
+            {
+                case ImageFilters.BlackWhite:
+                    filter = MatrixFilters.BlackWhite;
+                    break;
+                case ImageFilters.Comic:
+                    filter = MatrixFilters.Comic;
+                    break;
+                case ImageFilters.Gotham:
+                    filter = MatrixFilters.Gotham;
+                    break;
+                case ImageFilters.Invert:
+                    filter = MatrixFilters.Invert;
+                    break;
+                case ImageFilters.Polaroid:
+                    filter = MatrixFilters.Polaroid;
+                    break;
+                case ImageFilters.Sepia:
+                    filter = MatrixFilters.Sepia;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(imageFilters), imageFilters, null);
+            }
+
+            _editor.Filter(filter);
+
+            return _editor.Image;
+        }
+
         public void SaveToTempImage()
         {
             _tempImage = _editor.Image;
-        }
-
-        public void Dispose()
-        {
-            _editor?.Dispose();
-            _tempImage?.Dispose();
         }
     }
 }

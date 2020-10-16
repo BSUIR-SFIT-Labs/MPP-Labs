@@ -35,10 +35,17 @@
             this.MenuItemSaveImage = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSaveAsImage = new System.Windows.Forms.ToolStripMenuItem();
             this.GbOperations = new System.Windows.Forms.GroupBox();
-            this.BtnChangeContrast = new System.Windows.Forms.Button();
+            this.BtnSepiaFilter = new System.Windows.Forms.Button();
+            this.BtnPolaroidFilter = new System.Windows.Forms.Button();
+            this.BtnInvertFilter = new System.Windows.Forms.Button();
+            this.BtnGothamFilter = new System.Windows.Forms.Button();
+            this.BtnComicFilter = new System.Windows.Forms.Button();
+            this.BtnBlackWhiteFilter = new System.Windows.Forms.Button();
+            this.LblImageFilters = new System.Windows.Forms.Label();
+            this.BtnSaveContrast = new System.Windows.Forms.Button();
             this.TbContrast = new System.Windows.Forms.TrackBar();
             this.LblContrast = new System.Windows.Forms.Label();
-            this.BtnApplyBrightnessChange = new System.Windows.Forms.Button();
+            this.BtnSaveBrightness = new System.Windows.Forms.Button();
             this.TbBrightness = new System.Windows.Forms.TrackBar();
             this.LblBrightness = new System.Windows.Forms.Label();
             this.BtnSaveRotation = new System.Windows.Forms.Button();
@@ -51,6 +58,7 @@
             this.LblRotation = new System.Windows.Forms.Label();
             this.BtnRotateTo90DegreesRight = new System.Windows.Forms.Button();
             this.PbImage = new System.Windows.Forms.PictureBox();
+            this.BtnSaveFilters = new System.Windows.Forms.Button();
             this.Menu.SuspendLayout();
             this.GbOperations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TbContrast)).BeginInit();
@@ -71,7 +79,7 @@
             this.fileToolStripMenuItem});
             this.Menu.Location = new System.Drawing.Point(0, 0);
             this.Menu.Name = "Menu";
-            this.Menu.Size = new System.Drawing.Size(906, 24);
+            this.Menu.Size = new System.Drawing.Size(984, 24);
             this.Menu.TabIndex = 3;
             this.Menu.Text = "menuStrip1";
             // 
@@ -112,10 +120,18 @@
             // 
             this.GbOperations.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.GbOperations.Controls.Add(this.BtnChangeContrast);
+            this.GbOperations.Controls.Add(this.BtnSaveFilters);
+            this.GbOperations.Controls.Add(this.BtnSepiaFilter);
+            this.GbOperations.Controls.Add(this.BtnPolaroidFilter);
+            this.GbOperations.Controls.Add(this.BtnInvertFilter);
+            this.GbOperations.Controls.Add(this.BtnGothamFilter);
+            this.GbOperations.Controls.Add(this.BtnComicFilter);
+            this.GbOperations.Controls.Add(this.BtnBlackWhiteFilter);
+            this.GbOperations.Controls.Add(this.LblImageFilters);
+            this.GbOperations.Controls.Add(this.BtnSaveContrast);
             this.GbOperations.Controls.Add(this.TbContrast);
             this.GbOperations.Controls.Add(this.LblContrast);
-            this.GbOperations.Controls.Add(this.BtnApplyBrightnessChange);
+            this.GbOperations.Controls.Add(this.BtnSaveBrightness);
             this.GbOperations.Controls.Add(this.TbBrightness);
             this.GbOperations.Controls.Add(this.LblBrightness);
             this.GbOperations.Controls.Add(this.BtnSaveRotation);
@@ -127,23 +143,116 @@
             this.GbOperations.Controls.Add(this.BtnRotateTo90DegreesLeft);
             this.GbOperations.Controls.Add(this.LblRotation);
             this.GbOperations.Controls.Add(this.BtnRotateTo90DegreesRight);
-            this.GbOperations.Location = new System.Drawing.Point(640, 27);
+            this.GbOperations.Location = new System.Drawing.Point(718, 27);
             this.GbOperations.Name = "GbOperations";
-            this.GbOperations.Size = new System.Drawing.Size(254, 472);
+            this.GbOperations.Size = new System.Drawing.Size(254, 572);
             this.GbOperations.TabIndex = 4;
             this.GbOperations.TabStop = false;
             this.GbOperations.Text = "Operations";
             // 
-            // BtnChangeContrast
+            // BtnSepiaFilter
             // 
-            this.BtnChangeContrast.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnChangeContrast.Location = new System.Drawing.Point(9, 320);
-            this.BtnChangeContrast.Name = "BtnChangeContrast";
-            this.BtnChangeContrast.Size = new System.Drawing.Size(239, 23);
-            this.BtnChangeContrast.TabIndex = 16;
-            this.BtnChangeContrast.Text = "Apply brightness changes";
-            this.BtnChangeContrast.UseVisualStyleBackColor = true;
-            this.BtnChangeContrast.Click += new System.EventHandler(this.ApplyChanges_Click);
+            this.BtnSepiaFilter.BackgroundImage = global::WinFormsPhotoEditor.Resources.Sepia;
+            this.BtnSepiaFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnSepiaFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSepiaFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSepiaFilter.Location = new System.Drawing.Point(171, 423);
+            this.BtnSepiaFilter.Name = "BtnSepiaFilter";
+            this.BtnSepiaFilter.Size = new System.Drawing.Size(75, 50);
+            this.BtnSepiaFilter.TabIndex = 23;
+            this.BtnSepiaFilter.Tag = "6";
+            this.BtnSepiaFilter.UseVisualStyleBackColor = true;
+            this.BtnSepiaFilter.Click += new System.EventHandler(this.BtnApplyFilter_Click);
+            // 
+            // BtnPolaroidFilter
+            // 
+            this.BtnPolaroidFilter.BackgroundImage = global::WinFormsPhotoEditor.Resources.Polaroid;
+            this.BtnPolaroidFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnPolaroidFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnPolaroidFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnPolaroidFilter.Location = new System.Drawing.Point(90, 423);
+            this.BtnPolaroidFilter.Name = "BtnPolaroidFilter";
+            this.BtnPolaroidFilter.Size = new System.Drawing.Size(75, 50);
+            this.BtnPolaroidFilter.TabIndex = 22;
+            this.BtnPolaroidFilter.Tag = "5";
+            this.BtnPolaroidFilter.UseVisualStyleBackColor = true;
+            this.BtnPolaroidFilter.Click += new System.EventHandler(this.BtnApplyFilter_Click);
+            // 
+            // BtnInvertFilter
+            // 
+            this.BtnInvertFilter.BackgroundImage = global::WinFormsPhotoEditor.Resources.Invert;
+            this.BtnInvertFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnInvertFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnInvertFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnInvertFilter.Location = new System.Drawing.Point(9, 423);
+            this.BtnInvertFilter.Name = "BtnInvertFilter";
+            this.BtnInvertFilter.Size = new System.Drawing.Size(75, 50);
+            this.BtnInvertFilter.TabIndex = 21;
+            this.BtnInvertFilter.Tag = "4";
+            this.BtnInvertFilter.UseVisualStyleBackColor = true;
+            this.BtnInvertFilter.Click += new System.EventHandler(this.BtnApplyFilter_Click);
+            // 
+            // BtnGothamFilter
+            // 
+            this.BtnGothamFilter.BackgroundImage = global::WinFormsPhotoEditor.Resources.Gotham;
+            this.BtnGothamFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnGothamFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnGothamFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnGothamFilter.Location = new System.Drawing.Point(171, 367);
+            this.BtnGothamFilter.Name = "BtnGothamFilter";
+            this.BtnGothamFilter.Size = new System.Drawing.Size(75, 50);
+            this.BtnGothamFilter.TabIndex = 20;
+            this.BtnGothamFilter.Tag = "3";
+            this.BtnGothamFilter.UseVisualStyleBackColor = true;
+            this.BtnGothamFilter.Click += new System.EventHandler(this.BtnApplyFilter_Click);
+            // 
+            // BtnComicFilter
+            // 
+            this.BtnComicFilter.BackgroundImage = global::WinFormsPhotoEditor.Resources.Comic;
+            this.BtnComicFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnComicFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnComicFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnComicFilter.Location = new System.Drawing.Point(90, 367);
+            this.BtnComicFilter.Name = "BtnComicFilter";
+            this.BtnComicFilter.Size = new System.Drawing.Size(75, 50);
+            this.BtnComicFilter.TabIndex = 19;
+            this.BtnComicFilter.Tag = "2";
+            this.BtnComicFilter.UseVisualStyleBackColor = true;
+            this.BtnComicFilter.Click += new System.EventHandler(this.BtnApplyFilter_Click);
+            // 
+            // BtnBlackWhiteFilter
+            // 
+            this.BtnBlackWhiteFilter.BackgroundImage = global::WinFormsPhotoEditor.Resources.BlackWhiteFilter;
+            this.BtnBlackWhiteFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.BtnBlackWhiteFilter.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnBlackWhiteFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnBlackWhiteFilter.Location = new System.Drawing.Point(9, 367);
+            this.BtnBlackWhiteFilter.Name = "BtnBlackWhiteFilter";
+            this.BtnBlackWhiteFilter.Size = new System.Drawing.Size(75, 50);
+            this.BtnBlackWhiteFilter.TabIndex = 18;
+            this.BtnBlackWhiteFilter.Tag = "1";
+            this.BtnBlackWhiteFilter.UseVisualStyleBackColor = true;
+            this.BtnBlackWhiteFilter.Click += new System.EventHandler(this.BtnApplyFilter_Click);
+            // 
+            // LblImageFilters
+            // 
+            this.LblImageFilters.AutoSize = true;
+            this.LblImageFilters.Location = new System.Drawing.Point(6, 351);
+            this.LblImageFilters.Name = "LblImageFilters";
+            this.LblImageFilters.Size = new System.Drawing.Size(37, 13);
+            this.LblImageFilters.TabIndex = 17;
+            this.LblImageFilters.Text = "Filters:";
+            // 
+            // BtnSaveContrast
+            // 
+            this.BtnSaveContrast.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSaveContrast.Location = new System.Drawing.Point(9, 320);
+            this.BtnSaveContrast.Name = "BtnSaveContrast";
+            this.BtnSaveContrast.Size = new System.Drawing.Size(239, 23);
+            this.BtnSaveContrast.TabIndex = 16;
+            this.BtnSaveContrast.Text = "Apply contrast changes";
+            this.BtnSaveContrast.UseVisualStyleBackColor = true;
+            this.BtnSaveContrast.Click += new System.EventHandler(this.ApplyChanges_Click);
             // 
             // TbContrast
             // 
@@ -164,16 +273,16 @@
             this.LblContrast.TabIndex = 14;
             this.LblContrast.Text = "Contrast:";
             // 
-            // BtnApplyBrightnessChange
+            // BtnSaveBrightness
             // 
-            this.BtnApplyBrightnessChange.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnApplyBrightnessChange.Location = new System.Drawing.Point(9, 240);
-            this.BtnApplyBrightnessChange.Name = "BtnApplyBrightnessChange";
-            this.BtnApplyBrightnessChange.Size = new System.Drawing.Size(239, 23);
-            this.BtnApplyBrightnessChange.TabIndex = 13;
-            this.BtnApplyBrightnessChange.Text = "Apply brightness changes";
-            this.BtnApplyBrightnessChange.UseVisualStyleBackColor = true;
-            this.BtnApplyBrightnessChange.Click += new System.EventHandler(this.ApplyChanges_Click);
+            this.BtnSaveBrightness.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSaveBrightness.Location = new System.Drawing.Point(9, 240);
+            this.BtnSaveBrightness.Name = "BtnSaveBrightness";
+            this.BtnSaveBrightness.Size = new System.Drawing.Size(239, 23);
+            this.BtnSaveBrightness.TabIndex = 13;
+            this.BtnSaveBrightness.Text = "Apply brightness changes";
+            this.BtnSaveBrightness.UseVisualStyleBackColor = true;
+            this.BtnSaveBrightness.Click += new System.EventHandler(this.ApplyChanges_Click);
             // 
             // TbBrightness
             // 
@@ -315,20 +424,31 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PbImage.Location = new System.Drawing.Point(12, 27);
             this.PbImage.Name = "PbImage";
-            this.PbImage.Size = new System.Drawing.Size(622, 472);
+            this.PbImage.Size = new System.Drawing.Size(700, 572);
             this.PbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PbImage.TabIndex = 0;
             this.PbImage.TabStop = false;
+            // 
+            // BtnSaveFilters
+            // 
+            this.BtnSaveFilters.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSaveFilters.Location = new System.Drawing.Point(9, 479);
+            this.BtnSaveFilters.Name = "BtnSaveFilters";
+            this.BtnSaveFilters.Size = new System.Drawing.Size(239, 23);
+            this.BtnSaveFilters.TabIndex = 24;
+            this.BtnSaveFilters.Text = "Apply filters";
+            this.BtnSaveFilters.UseVisualStyleBackColor = true;
+            this.BtnSaveFilters.Click += new System.EventHandler(this.ApplyChanges_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(906, 511);
+            this.ClientSize = new System.Drawing.Size(984, 611);
             this.Controls.Add(this.GbOperations);
             this.Controls.Add(this.PbImage);
             this.Controls.Add(this.Menu);
-            this.MinimumSize = new System.Drawing.Size(922, 550);
+            this.MinimumSize = new System.Drawing.Size(1000, 650);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Photo editor";
@@ -366,12 +486,20 @@
         private System.Windows.Forms.Label LblHue;
         private System.Windows.Forms.Button BtnSaveHue;
         private System.Windows.Forms.Button BtnSaveRotation;
-        private System.Windows.Forms.Button BtnApplyBrightnessChange;
+        private System.Windows.Forms.Button BtnSaveBrightness;
         private System.Windows.Forms.TrackBar TbBrightness;
         private System.Windows.Forms.Label LblBrightness;
-        private System.Windows.Forms.Button BtnChangeContrast;
+        private System.Windows.Forms.Button BtnSaveContrast;
         private System.Windows.Forms.TrackBar TbContrast;
         private System.Windows.Forms.Label LblContrast;
+        private System.Windows.Forms.Button BtnBlackWhiteFilter;
+        private System.Windows.Forms.Label LblImageFilters;
+        private System.Windows.Forms.Button BtnComicFilter;
+        private System.Windows.Forms.Button BtnGothamFilter;
+        private System.Windows.Forms.Button BtnPolaroidFilter;
+        private System.Windows.Forms.Button BtnInvertFilter;
+        private System.Windows.Forms.Button BtnSepiaFilter;
+        private System.Windows.Forms.Button BtnSaveFilters;
     }
 }
 

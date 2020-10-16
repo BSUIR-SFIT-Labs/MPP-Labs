@@ -63,6 +63,56 @@ namespace WinFormsPhotoEditor {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BlackWhiteFilter {
+            get {
+                object obj = ResourceManager.GetObject("BlackWhiteFilter", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Comic {
+            get {
+                object obj = ResourceManager.GetObject("Comic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gotham {
+            get {
+                object obj = ResourceManager.GetObject("Gotham", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Invert {
+            get {
+                object obj = ResourceManager.GetObject("Invert", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Polaroid {
+            get {
+                object obj = ResourceManager.GetObject("Polaroid", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap RotateLeftImage {
             get {
                 object obj = ResourceManager.GetObject("RotateLeftImage", resourceCulture);
@@ -86,6 +136,16 @@ namespace WinFormsPhotoEditor {
         internal static System.Drawing.Bitmap RotateToDegreesRightImage {
             get {
                 object obj = ResourceManager.GetObject("RotateToDegreesRightImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Sepia {
+            get {
+                object obj = ResourceManager.GetObject("Sepia", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
