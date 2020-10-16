@@ -103,6 +103,16 @@ namespace WinFormsPhotoEditor {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap HorizontalFlip {
+            get {
+                object obj = ResourceManager.GetObject("HorizontalFlip", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Invert {
             get {
                 object obj = ResourceManager.GetObject("Invert", resourceCulture);
@@ -156,6 +166,16 @@ namespace WinFormsPhotoEditor {
         internal static System.Drawing.Bitmap Sepia {
             get {
                 object obj = ResourceManager.GetObject("Sepia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap VerticalFlip {
+            get {
+                object obj = ResourceManager.GetObject("VerticalFlip", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

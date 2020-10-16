@@ -35,8 +35,10 @@
             this.MenuItemSaveImage = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSaveAsImage = new System.Windows.Forms.ToolStripMenuItem();
             this.GbOperations = new System.Windows.Forms.GroupBox();
+            this.BtnReset = new System.Windows.Forms.Button();
+            this.BtnHorizontalFlip = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.LblZoom = new System.Windows.Forms.Label();
+            this.LblFlip = new System.Windows.Forms.Label();
             this.BtnSaveFilters = new System.Windows.Forms.Button();
             this.BtnSepiaFilter = new System.Windows.Forms.Button();
             this.BtnPolaroidFilter = new System.Windows.Forms.Button();
@@ -61,6 +63,7 @@
             this.LblRotation = new System.Windows.Forms.Label();
             this.BtnRotateTo90DegreesRight = new System.Windows.Forms.Button();
             this.PbImage = new System.Windows.Forms.PictureBox();
+            this.BtnVerticalFlip = new System.Windows.Forms.Button();
             this.Menu.SuspendLayout();
             this.GbOperations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TbContrast)).BeginInit();
@@ -122,8 +125,11 @@
             // 
             this.GbOperations.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.GbOperations.Controls.Add(this.BtnVerticalFlip);
+            this.GbOperations.Controls.Add(this.BtnReset);
+            this.GbOperations.Controls.Add(this.BtnHorizontalFlip);
             this.GbOperations.Controls.Add(this.panel1);
-            this.GbOperations.Controls.Add(this.LblZoom);
+            this.GbOperations.Controls.Add(this.LblFlip);
             this.GbOperations.Controls.Add(this.BtnSaveFilters);
             this.GbOperations.Controls.Add(this.BtnSepiaFilter);
             this.GbOperations.Controls.Add(this.BtnPolaroidFilter);
@@ -149,10 +155,38 @@
             this.GbOperations.Controls.Add(this.BtnRotateTo90DegreesRight);
             this.GbOperations.Location = new System.Drawing.Point(718, 27);
             this.GbOperations.Name = "GbOperations";
-            this.GbOperations.Size = new System.Drawing.Size(254, 622);
+            this.GbOperations.Size = new System.Drawing.Size(254, 672);
             this.GbOperations.TabIndex = 4;
             this.GbOperations.TabStop = false;
             this.GbOperations.Text = "Operations";
+            // 
+            // BtnReset
+            // 
+            this.BtnReset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnReset.Location = new System.Drawing.Point(9, 643);
+            this.BtnReset.Name = "BtnReset";
+            this.BtnReset.Size = new System.Drawing.Size(237, 23);
+            this.BtnReset.TabIndex = 29;
+            this.BtnReset.Text = "Reset";
+            this.BtnReset.UseVisualStyleBackColor = true;
+            this.BtnReset.Click += new System.EventHandler(this.BtnReset_Click);
+            // 
+            // BtnHorizontalFlip
+            // 
+            this.BtnHorizontalFlip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnHorizontalFlip.BackColor = System.Drawing.Color.Transparent;
+            this.BtnHorizontalFlip.BackgroundImage = global::WinFormsPhotoEditor.Resources.HorizontalFlip;
+            this.BtnHorizontalFlip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnHorizontalFlip.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnHorizontalFlip.FlatAppearance.BorderSize = 0;
+            this.BtnHorizontalFlip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnHorizontalFlip.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnHorizontalFlip.Location = new System.Drawing.Point(9, 559);
+            this.BtnHorizontalFlip.Name = "BtnHorizontalFlip";
+            this.BtnHorizontalFlip.Size = new System.Drawing.Size(30, 30);
+            this.BtnHorizontalFlip.TabIndex = 28;
+            this.BtnHorizontalFlip.UseVisualStyleBackColor = false;
+            this.BtnHorizontalFlip.Click += new System.EventHandler(this.BtnHorizontalFlip_Click);
             // 
             // panel1
             // 
@@ -164,14 +198,14 @@
             this.panel1.Size = new System.Drawing.Size(213, 25);
             this.panel1.TabIndex = 27;
             // 
-            // LblZoom
+            // LblFlip
             // 
-            this.LblZoom.AutoSize = true;
-            this.LblZoom.Location = new System.Drawing.Point(6, 543);
-            this.LblZoom.Name = "LblZoom";
-            this.LblZoom.Size = new System.Drawing.Size(37, 13);
-            this.LblZoom.TabIndex = 25;
-            this.LblZoom.Text = "Zoom:";
+            this.LblFlip.AutoSize = true;
+            this.LblFlip.Location = new System.Drawing.Point(6, 543);
+            this.LblFlip.Name = "LblFlip";
+            this.LblFlip.Size = new System.Drawing.Size(26, 13);
+            this.LblFlip.TabIndex = 25;
+            this.LblFlip.Text = "Flip:";
             // 
             // BtnSaveFilters
             // 
@@ -458,16 +492,33 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PbImage.Location = new System.Drawing.Point(12, 27);
             this.PbImage.Name = "PbImage";
-            this.PbImage.Size = new System.Drawing.Size(700, 622);
+            this.PbImage.Size = new System.Drawing.Size(700, 672);
             this.PbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PbImage.TabIndex = 0;
             this.PbImage.TabStop = false;
+            // 
+            // BtnVerticalFlip
+            // 
+            this.BtnVerticalFlip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnVerticalFlip.BackColor = System.Drawing.Color.Transparent;
+            this.BtnVerticalFlip.BackgroundImage = global::WinFormsPhotoEditor.Resources.VerticalFlip;
+            this.BtnVerticalFlip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BtnVerticalFlip.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnVerticalFlip.FlatAppearance.BorderSize = 0;
+            this.BtnVerticalFlip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnVerticalFlip.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnVerticalFlip.Location = new System.Drawing.Point(45, 559);
+            this.BtnVerticalFlip.Name = "BtnVerticalFlip";
+            this.BtnVerticalFlip.Size = new System.Drawing.Size(30, 30);
+            this.BtnVerticalFlip.TabIndex = 30;
+            this.BtnVerticalFlip.UseVisualStyleBackColor = false;
+            this.BtnVerticalFlip.Click += new System.EventHandler(this.BtnVerticalFlip_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 661);
+            this.ClientSize = new System.Drawing.Size(984, 711);
             this.Controls.Add(this.GbOperations);
             this.Controls.Add(this.PbImage);
             this.Controls.Add(this.Menu);
@@ -523,8 +574,11 @@
         private System.Windows.Forms.Button BtnInvertFilter;
         private System.Windows.Forms.Button BtnSepiaFilter;
         private System.Windows.Forms.Button BtnSaveFilters;
-        private System.Windows.Forms.Label LblZoom;
+        private System.Windows.Forms.Label LblFlip;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button BtnHorizontalFlip;
+        private System.Windows.Forms.Button BtnReset;
+        private System.Windows.Forms.Button BtnVerticalFlip;
     }
 }
 

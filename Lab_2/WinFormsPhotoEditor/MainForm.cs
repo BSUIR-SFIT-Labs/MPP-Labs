@@ -80,6 +80,16 @@ namespace WinFormsPhotoEditor
             }
         }
 
+        private void BtnHorizontalFlip_Click(object sender, EventArgs e)
+        {
+            PbImage.Image = _imageEditor?.FlipImage(false);
+        }
+
+        private void BtnVerticalFlip_Click(object sender, EventArgs e)
+        {
+            PbImage.Image = _imageEditor?.FlipImage(true);
+        }
+
         private void ApplyChanges_Click(object sender, EventArgs e)
         {
             _imageEditor?.SaveToTempImage();
@@ -89,6 +99,11 @@ namespace WinFormsPhotoEditor
         {
             _imageEditor?.Dispose();
             _imageEditor = null;
+        }
+
+        private void BtnReset_Click(object sender, EventArgs e)
+        {
+            PbImage.Image = _imageEditor?.Reset();
         }
     }
 }
