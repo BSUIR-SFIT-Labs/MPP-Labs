@@ -110,6 +110,7 @@
     <None Include="Resources\Gotham.jpg" />
     <None Include="Resources\Invert.jpg" />
     <None Include="Resources\Polaroid.jpg" />
+    <None Include="Resources\Gradient.png" />
     <Content Include="Resources\RotateLeftImage.png" />
     <Content Include="Resources\RotateRightImage.png" />
     <None Include="Resources\RotateToDegreesRightImage.png" />

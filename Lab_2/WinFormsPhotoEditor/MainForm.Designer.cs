@@ -35,6 +35,9 @@
             this.MenuItemSaveImage = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSaveAsImage = new System.Windows.Forms.ToolStripMenuItem();
             this.GbOperations = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.LblZoom = new System.Windows.Forms.Label();
+            this.BtnSaveFilters = new System.Windows.Forms.Button();
             this.BtnSepiaFilter = new System.Windows.Forms.Button();
             this.BtnPolaroidFilter = new System.Windows.Forms.Button();
             this.BtnInvertFilter = new System.Windows.Forms.Button();
@@ -58,7 +61,6 @@
             this.LblRotation = new System.Windows.Forms.Label();
             this.BtnRotateTo90DegreesRight = new System.Windows.Forms.Button();
             this.PbImage = new System.Windows.Forms.PictureBox();
-            this.BtnSaveFilters = new System.Windows.Forms.Button();
             this.Menu.SuspendLayout();
             this.GbOperations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TbContrast)).BeginInit();
@@ -120,6 +122,8 @@
             // 
             this.GbOperations.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.GbOperations.Controls.Add(this.panel1);
+            this.GbOperations.Controls.Add(this.LblZoom);
             this.GbOperations.Controls.Add(this.BtnSaveFilters);
             this.GbOperations.Controls.Add(this.BtnSepiaFilter);
             this.GbOperations.Controls.Add(this.BtnPolaroidFilter);
@@ -145,10 +149,40 @@
             this.GbOperations.Controls.Add(this.BtnRotateTo90DegreesRight);
             this.GbOperations.Location = new System.Drawing.Point(718, 27);
             this.GbOperations.Name = "GbOperations";
-            this.GbOperations.Size = new System.Drawing.Size(254, 572);
+            this.GbOperations.Size = new System.Drawing.Size(254, 622);
             this.GbOperations.TabIndex = 4;
             this.GbOperations.TabStop = false;
             this.GbOperations.Text = "Operations";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = global::WinFormsPhotoEditor.Resources.Gradient;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Location = new System.Drawing.Point(22, 162);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(213, 25);
+            this.panel1.TabIndex = 27;
+            // 
+            // LblZoom
+            // 
+            this.LblZoom.AutoSize = true;
+            this.LblZoom.Location = new System.Drawing.Point(6, 543);
+            this.LblZoom.Name = "LblZoom";
+            this.LblZoom.Size = new System.Drawing.Size(37, 13);
+            this.LblZoom.TabIndex = 25;
+            this.LblZoom.Text = "Zoom:";
+            // 
+            // BtnSaveFilters
+            // 
+            this.BtnSaveFilters.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnSaveFilters.Location = new System.Drawing.Point(9, 512);
+            this.BtnSaveFilters.Name = "BtnSaveFilters";
+            this.BtnSaveFilters.Size = new System.Drawing.Size(239, 23);
+            this.BtnSaveFilters.TabIndex = 24;
+            this.BtnSaveFilters.Text = "Apply filters";
+            this.BtnSaveFilters.UseVisualStyleBackColor = true;
+            this.BtnSaveFilters.Click += new System.EventHandler(this.ApplyChanges_Click);
             // 
             // BtnSepiaFilter
             // 
@@ -156,7 +190,7 @@
             this.BtnSepiaFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnSepiaFilter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnSepiaFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSepiaFilter.Location = new System.Drawing.Point(171, 423);
+            this.BtnSepiaFilter.Location = new System.Drawing.Point(171, 456);
             this.BtnSepiaFilter.Name = "BtnSepiaFilter";
             this.BtnSepiaFilter.Size = new System.Drawing.Size(75, 50);
             this.BtnSepiaFilter.TabIndex = 23;
@@ -170,7 +204,7 @@
             this.BtnPolaroidFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnPolaroidFilter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnPolaroidFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnPolaroidFilter.Location = new System.Drawing.Point(90, 423);
+            this.BtnPolaroidFilter.Location = new System.Drawing.Point(90, 456);
             this.BtnPolaroidFilter.Name = "BtnPolaroidFilter";
             this.BtnPolaroidFilter.Size = new System.Drawing.Size(75, 50);
             this.BtnPolaroidFilter.TabIndex = 22;
@@ -184,7 +218,7 @@
             this.BtnInvertFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnInvertFilter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnInvertFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnInvertFilter.Location = new System.Drawing.Point(9, 423);
+            this.BtnInvertFilter.Location = new System.Drawing.Point(9, 456);
             this.BtnInvertFilter.Name = "BtnInvertFilter";
             this.BtnInvertFilter.Size = new System.Drawing.Size(75, 50);
             this.BtnInvertFilter.TabIndex = 21;
@@ -198,7 +232,7 @@
             this.BtnGothamFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnGothamFilter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnGothamFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnGothamFilter.Location = new System.Drawing.Point(171, 367);
+            this.BtnGothamFilter.Location = new System.Drawing.Point(171, 400);
             this.BtnGothamFilter.Name = "BtnGothamFilter";
             this.BtnGothamFilter.Size = new System.Drawing.Size(75, 50);
             this.BtnGothamFilter.TabIndex = 20;
@@ -212,7 +246,7 @@
             this.BtnComicFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnComicFilter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnComicFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnComicFilter.Location = new System.Drawing.Point(90, 367);
+            this.BtnComicFilter.Location = new System.Drawing.Point(90, 400);
             this.BtnComicFilter.Name = "BtnComicFilter";
             this.BtnComicFilter.Size = new System.Drawing.Size(75, 50);
             this.BtnComicFilter.TabIndex = 19;
@@ -226,7 +260,7 @@
             this.BtnBlackWhiteFilter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BtnBlackWhiteFilter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnBlackWhiteFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnBlackWhiteFilter.Location = new System.Drawing.Point(9, 367);
+            this.BtnBlackWhiteFilter.Location = new System.Drawing.Point(9, 400);
             this.BtnBlackWhiteFilter.Name = "BtnBlackWhiteFilter";
             this.BtnBlackWhiteFilter.Size = new System.Drawing.Size(75, 50);
             this.BtnBlackWhiteFilter.TabIndex = 18;
@@ -237,7 +271,7 @@
             // LblImageFilters
             // 
             this.LblImageFilters.AutoSize = true;
-            this.LblImageFilters.Location = new System.Drawing.Point(6, 351);
+            this.LblImageFilters.Location = new System.Drawing.Point(6, 384);
             this.LblImageFilters.Name = "LblImageFilters";
             this.LblImageFilters.Size = new System.Drawing.Size(37, 13);
             this.LblImageFilters.TabIndex = 17;
@@ -246,7 +280,7 @@
             // BtnSaveContrast
             // 
             this.BtnSaveContrast.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnSaveContrast.Location = new System.Drawing.Point(9, 320);
+            this.BtnSaveContrast.Location = new System.Drawing.Point(9, 353);
             this.BtnSaveContrast.Name = "BtnSaveContrast";
             this.BtnSaveContrast.Size = new System.Drawing.Size(239, 23);
             this.BtnSaveContrast.TabIndex = 16;
@@ -256,7 +290,7 @@
             // 
             // TbContrast
             // 
-            this.TbContrast.Location = new System.Drawing.Point(9, 287);
+            this.TbContrast.Location = new System.Drawing.Point(9, 320);
             this.TbContrast.Maximum = 100;
             this.TbContrast.Minimum = -100;
             this.TbContrast.Name = "TbContrast";
@@ -267,7 +301,7 @@
             // LblContrast
             // 
             this.LblContrast.AutoSize = true;
-            this.LblContrast.Location = new System.Drawing.Point(6, 271);
+            this.LblContrast.Location = new System.Drawing.Point(6, 304);
             this.LblContrast.Name = "LblContrast";
             this.LblContrast.Size = new System.Drawing.Size(49, 13);
             this.LblContrast.TabIndex = 14;
@@ -276,7 +310,7 @@
             // BtnSaveBrightness
             // 
             this.BtnSaveBrightness.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnSaveBrightness.Location = new System.Drawing.Point(9, 240);
+            this.BtnSaveBrightness.Location = new System.Drawing.Point(9, 273);
             this.BtnSaveBrightness.Name = "BtnSaveBrightness";
             this.BtnSaveBrightness.Size = new System.Drawing.Size(239, 23);
             this.BtnSaveBrightness.TabIndex = 13;
@@ -286,7 +320,7 @@
             // 
             // TbBrightness
             // 
-            this.TbBrightness.Location = new System.Drawing.Point(9, 207);
+            this.TbBrightness.Location = new System.Drawing.Point(9, 240);
             this.TbBrightness.Maximum = 100;
             this.TbBrightness.Minimum = -100;
             this.TbBrightness.Name = "TbBrightness";
@@ -297,7 +331,7 @@
             // LblBrightness
             // 
             this.LblBrightness.AutoSize = true;
-            this.LblBrightness.Location = new System.Drawing.Point(6, 191);
+            this.LblBrightness.Location = new System.Drawing.Point(6, 224);
             this.LblBrightness.Name = "LblBrightness";
             this.LblBrightness.Size = new System.Drawing.Size(59, 13);
             this.LblBrightness.TabIndex = 11;
@@ -317,7 +351,7 @@
             // BtnSaveHue
             // 
             this.BtnSaveHue.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnSaveHue.Location = new System.Drawing.Point(9, 160);
+            this.BtnSaveHue.Location = new System.Drawing.Point(9, 193);
             this.BtnSaveHue.Name = "BtnSaveHue";
             this.BtnSaveHue.Size = new System.Drawing.Size(239, 23);
             this.BtnSaveHue.TabIndex = 9;
@@ -424,27 +458,16 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.PbImage.Location = new System.Drawing.Point(12, 27);
             this.PbImage.Name = "PbImage";
-            this.PbImage.Size = new System.Drawing.Size(700, 572);
+            this.PbImage.Size = new System.Drawing.Size(700, 622);
             this.PbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PbImage.TabIndex = 0;
             this.PbImage.TabStop = false;
-            // 
-            // BtnSaveFilters
-            // 
-            this.BtnSaveFilters.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnSaveFilters.Location = new System.Drawing.Point(9, 479);
-            this.BtnSaveFilters.Name = "BtnSaveFilters";
-            this.BtnSaveFilters.Size = new System.Drawing.Size(239, 23);
-            this.BtnSaveFilters.TabIndex = 24;
-            this.BtnSaveFilters.Text = "Apply filters";
-            this.BtnSaveFilters.UseVisualStyleBackColor = true;
-            this.BtnSaveFilters.Click += new System.EventHandler(this.ApplyChanges_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 611);
+            this.ClientSize = new System.Drawing.Size(984, 661);
             this.Controls.Add(this.GbOperations);
             this.Controls.Add(this.PbImage);
             this.Controls.Add(this.Menu);
@@ -500,6 +523,8 @@
         private System.Windows.Forms.Button BtnInvertFilter;
         private System.Windows.Forms.Button BtnSepiaFilter;
         private System.Windows.Forms.Button BtnSaveFilters;
+        private System.Windows.Forms.Label LblZoom;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
