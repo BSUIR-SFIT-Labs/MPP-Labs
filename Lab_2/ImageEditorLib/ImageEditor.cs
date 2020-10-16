@@ -123,6 +123,11 @@ namespace ImageEditorLib
             return _editor.Image;
         }
 
+        public void SaveImage(string pathToFile)
+        {
+            _editor.Save(pathToFile);
+        }
+
         public void SaveToTempImage()
         {
             _tempImage = _editor.Image;

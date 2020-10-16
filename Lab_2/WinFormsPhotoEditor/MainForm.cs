@@ -109,6 +109,18 @@ namespace WinFormsPhotoEditor
             ResetAllControls();
         }
 
+        private void MenuItemSaveAsImage_Click(object sender, EventArgs e)
+        {
+            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            saveFileDialog.Filter =
+                @"Image files (*.jpg, *.jpeg, *.jpe, *.png) | *.jpg; *.jpeg; *.jpe; *.png";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                _imageEditor?.SaveImage(saveFileDialog.FileName);
+            }
+        }
+
         private void ResetAllControls()
         {
             NudDegreeToRotate.Value = 0;

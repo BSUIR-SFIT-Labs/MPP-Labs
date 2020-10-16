@@ -32,7 +32,6 @@
             this.Menu = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemOpenImage = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuItemSaveImage = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSaveAsImage = new System.Windows.Forms.ToolStripMenuItem();
             this.GbOperations = new System.Windows.Forms.GroupBox();
             this.BtnReset = new System.Windows.Forms.Button();
@@ -67,6 +66,7 @@
             this.LblSaturation = new System.Windows.Forms.Label();
             this.TbSaturation = new System.Windows.Forms.TrackBar();
             this.btnSaveSaturation = new System.Windows.Forms.Button();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.Menu.SuspendLayout();
             this.GbOperations.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TbContrast)).BeginInit();
@@ -96,7 +96,6 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MenuItemOpenImage,
-            this.MenuItemSaveImage,
             this.MenuItemSaveAsImage});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -110,13 +109,6 @@
             this.MenuItemOpenImage.Text = "Open";
             this.MenuItemOpenImage.Click += new System.EventHandler(this.MenuItemOpenImage_Click);
             // 
-            // MenuItemSaveImage
-            // 
-            this.MenuItemSaveImage.Name = "MenuItemSaveImage";
-            this.MenuItemSaveImage.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.MenuItemSaveImage.Size = new System.Drawing.Size(184, 22);
-            this.MenuItemSaveImage.Text = "Save";
-            // 
             // MenuItemSaveAsImage
             // 
             this.MenuItemSaveAsImage.Name = "MenuItemSaveAsImage";
@@ -124,6 +116,7 @@
             | System.Windows.Forms.Keys.S)));
             this.MenuItemSaveAsImage.Size = new System.Drawing.Size(184, 22);
             this.MenuItemSaveAsImage.Text = "Save as";
+            this.MenuItemSaveAsImage.Click += new System.EventHandler(this.MenuItemSaveAsImage_Click);
             // 
             // GbOperations
             // 
@@ -610,7 +603,6 @@
         private new System.Windows.Forms.MenuStrip Menu;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem MenuItemOpenImage;
-        private System.Windows.Forms.ToolStripMenuItem MenuItemSaveImage;
         private System.Windows.Forms.ToolStripMenuItem MenuItemSaveAsImage;
         private System.Windows.Forms.GroupBox GbOperations;
         private System.Windows.Forms.Label LblRotation;
@@ -643,6 +635,7 @@
         private System.Windows.Forms.Button btnSaveSaturation;
         private System.Windows.Forms.TrackBar TbSaturation;
         private System.Windows.Forms.Label LblSaturation;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
     }
 }
 
