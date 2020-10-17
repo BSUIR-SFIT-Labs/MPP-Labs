@@ -9,7 +9,7 @@ namespace ImageEditorLib
     {
         private readonly ImageFactory _editor;
 
-        private Image _startImage;
+        private readonly Image _startImage;
         private Image _tempImage;
 
         public ImageEditor(string pathToImage)
