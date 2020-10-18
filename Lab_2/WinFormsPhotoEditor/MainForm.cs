@@ -38,6 +38,18 @@ namespace WinFormsPhotoEditor
             }
         }
 
+        private void MenuItemSaveAsImage_Click(object sender, EventArgs e)
+        {
+            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            saveFileDialog.Filter =
+                @"Image files (*.jpg, *.jpeg, *.jpe, *.png) | *.jpg; *.jpeg; *.jpe; *.png";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                _imageEditor?.SaveImage(saveFileDialog.FileName);
+            }
+        }
+
         #region Image rotation
 
         private void BtnRotateTo90DegreesRight_Click(object sender, EventArgs e)
@@ -107,18 +119,6 @@ namespace WinFormsPhotoEditor
         {
             PbImage.Image = _imageEditor?.Reset();
             ResetAllControls();
-        }
-
-        private void MenuItemSaveAsImage_Click(object sender, EventArgs e)
-        {
-            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            saveFileDialog.Filter =
-                @"Image files (*.jpg, *.jpeg, *.jpe, *.png) | *.jpg; *.jpeg; *.jpe; *.png";
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                _imageEditor?.SaveImage(saveFileDialog.FileName);
-            }
         }
 
         private void ResetAllControls()
