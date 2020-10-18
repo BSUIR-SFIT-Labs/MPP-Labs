@@ -7,7 +7,26 @@
         Title="Photo editor" 
         MinWidth="1200" MinHeight="800" Width="1200" Height="800"
         Icon="Resources/Icon.ico">
+    <Window.CommandBindings>
+        <CommandBinding Command="New" Executed="OpenCommandBinding_Executed"/>
+        <CommandBinding Command="SaveAs" Executed="SaveAsCommandBinding_Executed"/>
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Gesture="Ctrl+O" Command="New"/>
+        <KeyBinding Gesture="Ctrl+Shift+S" Command="SaveAs"/>
+    </Window.InputBindings>
+
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="18"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0" Background="White">
+            <MenuItem Header="File">
+                <MenuItem Header="Open" InputGestureText="Ctrl+O" Command="Open"/>
+                <MenuItem Header="SaveAs" InputGestureText="Ctrl+Shift+S" Command="SaveAs"/>
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>

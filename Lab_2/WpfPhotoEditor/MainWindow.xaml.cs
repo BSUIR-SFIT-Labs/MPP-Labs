@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Input;
 
 namespace WpfPhotoEditor
 {
@@ -10,6 +11,16 @@ namespace WpfPhotoEditor
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void OpenCommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private void SaveAsCommandBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
