@@ -7,12 +7,13 @@
         Title="Photo editor" 
         MinWidth="1200" MinHeight="800" Width="1200" Height="800"
         Icon="Resources/Icon.ico">
+
     <Window.CommandBindings>
         <CommandBinding Command="New" Executed="OpenCommandBinding_Executed"/>
         <CommandBinding Command="SaveAs" Executed="SaveAsCommandBinding_Executed"/>
     </Window.CommandBindings>
     <Window.InputBindings>
-        <KeyBinding Gesture="Ctrl+O" Command="New"/>
+        <KeyBinding Gesture="Ctrl+O" Command="Open"/>
         <KeyBinding Gesture="Ctrl+Shift+S" Command="SaveAs"/>
     </Window.InputBindings>
 
@@ -21,12 +22,120 @@
             <RowDefinition Height="18"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="283"/>
+        </Grid.ColumnDefinitions>
 
-        <Menu Grid.Row="0" Background="White">
+        <Menu Grid.Row="0" Grid.ColumnSpan="2"  Background="White">
             <MenuItem Header="File">
                 <MenuItem Header="Open" InputGestureText="Ctrl+O" Command="Open"/>
                 <MenuItem Header="SaveAs" InputGestureText="Ctrl+Shift+S" Command="SaveAs"/>
             </MenuItem>
         </Menu>
+
+        <Image Grid.Row="1" Grid.Column="0" Margin="10"/>
+
+        <GroupBox Grid.Row="1" Grid.Column="1" Header="Operations" Margin="10">
+            <StackPanel Orientation="Vertical">
+                <!-- Rotation -->
+                <StackPanel Orientation="Vertical">
+                    <Label Content="Rotation:"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Width="30" Height="30" Margin="5,0,0,0" Cursor="Hand" Background="{x:Null}" BorderBrush="White" BorderThickness="0" Name="BtnRotateToSpecDegreesRight" Click="BtnRotateToSpecDegreesRight_OnClick">
+                           <Image Source="Resources/RotateToDegreesRightImage.png"/>
+                        </Button>
+                        <TextBox Width="50" Height="20" Margin="5,0,0,0" Text="0" Name="TbDegreeToRotate"/>
+                        <Button Height="20" Margin="5,0,5,0" Content="Apply rotation changes" Width="135" Name="BtnSaveRotation" Click="ApplyChanges_Click" Cursor="Hand"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Width="30" Height="30" Margin="5,0,0,0" Cursor="Hand" Background="{x:Null}" BorderBrush="White" BorderThickness="0" Name="BtnRotateTo90DegreesRight" Click="BtnRotateTo90DegreesRight_OnClick">
+                            <Image Source="Resources/RotateRightImage.png"/>
+                        </Button>
+                        <Button Width="30" Height="30" Margin="5,0,0,0" Cursor="Hand" Background="{x:Null}" BorderBrush="White" BorderThickness="0" Name="BtnRotateTo90DegreesLeft" Click="BtnRotateTo90DegreesLeft_OnClick">
+                            <Image Source="Resources/RotateLeftImage.png"/>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- Flip -->
+                <StackPanel Orientation="Vertical">
+                    <Label Content="Flip:"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Width="30" Height="30" Margin="5,0,0,0" Cursor="Hand" Background="{x:Null}" BorderBrush="White" BorderThickness="0" Name="BtnHorizontalFlip" Click="BtnHorizontalFlip_OnClick">
+                            <Image Source="Resources/HorizontalFlip.png"/>
+                        </Button>
+                        <Button Width="30" Height="30" Margin="5,0,0,0" Cursor="Hand" Background="{x:Null}" BorderBrush="White" BorderThickness="0" Name="BtnVerticalFlip" Click="BtnVerticalFlip_OnClick">
+                            <Image Source="Resources/VerticalFlip.png"/>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+
+                <!-- Hue -->
+                <StackPanel Orientation="Vertical">
+                    <Label Content="Hue:"/>
+                    <Slider Minimum="0" Maximum="360" SmallChange="1" TickPlacement="BottomRight" AutoToolTipPlacement="BottomRight" Name="SHue" ValueChanged="SHue_OnValueChanged"/>
+                    <Rectangle Height="25" Margin="5,0,5,0">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="Resources/Gradient.png"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Button Height="20" Margin="5,5,5,0" Content="Apply hue changes" Name="BtnSaveHue" Click="ApplyChanges_Click" Cursor="Hand"/>
+                </StackPanel>
+
+                <!-- Brightness -->
+                <StackPanel Orientation="Vertical">
+                    <Label Content="Brightness:"/>
+                    <Slider Minimum="-100" Maximum="100" SmallChange="1" TickPlacement="BottomRight" AutoToolTipPlacement="BottomRight" Name="SBrightness" ValueChanged="SBrightness_OnValueChanged"/>
+                    <Button Height="20" Margin="5,5,5,0" Content="Apply brightness changes" Name="BtnSaveBrightness" Click="ApplyChanges_Click" Cursor="Hand"/>
+                </StackPanel>
+
+                <!-- Contrast -->
+                <StackPanel Orientation="Vertical">
+                    <Label Content="Contrast:"/>
+                    <Slider Minimum="-100" Maximum="100" SmallChange="1" TickPlacement="BottomRight" AutoToolTipPlacement="BottomRight" Name="SContrast" ValueChanged="SContrast_OnValueChangedContrast_OnValueChanged"/>
+                    <Button Height="20" Margin="5,5,5,0" Content="Apply contrast changes" Name="BtnSaveContrast" Click="ApplyChanges_Click" Cursor="Hand"/>
+                </StackPanel>
+
+                <!-- Saturation -->
+                <StackPanel Orientation="Vertical">
+                    <Label Content="Saturation:"/>
+                    <Slider Minimum="-100" Maximum="100" SmallChange="1" TickPlacement="BottomRight" AutoToolTipPlacement="BottomRight" Name="SSaturation" ValueChanged="SSaturation_OnValueChangedContrast_OnValueChanged"/>
+                    <Button Height="20" Margin="5,5,5,0" Content="Apply saturation changes" Name="BtnSaveSaturation" Click="ApplyChanges_Click" Cursor="Hand"/>
+                </StackPanel>
+
+                <!-- Filters -->
+                <StackPanel Orientation="Vertical">
+                    <Label Content="Filters:"/>
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal">
+                            <Button Margin="5,0,0,0" Cursor="Hand" Background="{x:Null}" BorderBrush="White" BorderThickness="0" Name="BtnBlackWhiteFilter" Click="BtnApplyFilter_Click">
+                                <Image Width="75" Height="50" Source="Resources/BlackWhiteFilter.jpg"/>
+                            </Button>
+                            <Button Margin="5,0,0,0" Cursor="Hand" Background="{x:Null}" BorderBrush="White" BorderThickness="0" Name="BtnComicFilter" Click="BtnApplyFilter_Click">
+                                <Image Width="75" Height="50" Source="Resources/Comic.jpg"/>
+                            </Button>
+                            <Button Margin="5,0,0,0" Cursor="Hand" Background="{x:Null}" BorderBrush="White" BorderThickness="0" Name="BtnGothamFilter" Click="BtnApplyFilter_Click">
+                                <Image Width="75" Height="50" Source="Resources/Gotham.jpg"/>
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <Button Margin="5,0,0,0" Cursor="Hand" Background="{x:Null}" BorderBrush="White" BorderThickness="0" Name="BtnInvertFilter" Click="BtnApplyFilter_Click">
+                                <Image Width="75" Height="50" Source="Resources/Invert.jpg"/>
+                            </Button>
+                            <Button Margin="5,0,0,0" Cursor="Hand" Background="{x:Null}" BorderBrush="White" BorderThickness="0" Name="BtnPolaroidFilter" Click="BtnApplyFilter_Click">
+                                <Image Width="75" Height="50" Source="Resources/Polaroid.jpg"/>
+                            </Button>
+                            <Button Margin="5,0,0,0" Cursor="Hand" Background="{x:Null}" BorderBrush="White" BorderThickness="0" Name="BtnSepiaFilter" Click="BtnApplyFilter_Click">
+                                <Image Width="75" Height="50" Source="Resources/Sepia.jpg"/>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
+                    <Button Height="20" Margin="5,5,5,0" Content="Apply filters" Name="BtnSaveFilters" Click="ApplyChanges_Click" Cursor="Hand"/>
+                </StackPanel>
+
+                <Button Height="20" Margin="5,50,5,0" Content="Reset" Name="BtnReset" Click="BtnReset_Click" Cursor="Hand"/>
+            </StackPanel>
+        </GroupBox>
     </Grid>
 </Window>
