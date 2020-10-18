@@ -143,5 +143,11 @@
   <ItemGroup>
     <Resource Include="Resources\Icon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ImageEditorLib\ImageEditorLib.csproj">
+      <Project>{E1542E4C-2293-40CC-96F3-968940C4F86E}</Project>
+      <Name>ImageEditorLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
