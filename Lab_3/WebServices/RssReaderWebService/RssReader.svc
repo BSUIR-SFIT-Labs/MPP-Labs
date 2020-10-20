@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="RssReaderWebService.Service1" CodeBehind="RssReader.svc.cs" %>
