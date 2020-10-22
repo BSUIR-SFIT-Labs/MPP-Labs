@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30309.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RssReader", "RssReader\RssReader.csproj", "{F444DBFF-4CA3-4383-A7CC-12829106A3A4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4C771F1D-696B-4FD1-8403-8986A3B3EAF6} = {4C771F1D-696B-4FD1-8403-8986A3B3EAF6}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebServices", "WebServices", "{07F2EC97-5AA3-4539-A34F-EE13A5910FC2}"
 EndProject

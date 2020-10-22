@@ -1,19 +1,20 @@
-﻿using System;
+﻿using System.ServiceModel.Syndication;
+using System.Xml;
 
 namespace RssReaderWebService
 {
     public class RssReader : IRssReader
     {
-        public string GetData(int value)
+        public Rss20FeedFormatter LoadFeedFromUrl(string feedUrl)
         {
-            return $"You entered: {value}";
-        }
+            var formatter = new Rss20FeedFormatter();
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
-        {
-            if (composite == null) throw new ArgumentNullException(nameof(composite));
-            if (composite.BoolValue) composite.StringValue += "Suffix";
-            return composite;
+            using (var xmlReader = XmlReader.Create(feedUrl))
+            {
+                formatter.ReadFrom(xmlReader);
+            }
+
+            return formatter;
         }
     }
 }
