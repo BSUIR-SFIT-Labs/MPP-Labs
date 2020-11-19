@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RssFeedReaderLib", "RssFeedReaderLib\RssFeedReaderLib.csproj", "{16C3FE80-BF52-418E-A42A-08CDE4BEC67E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RssFeedReader", "RssFeedReader\RssFeedReader.csproj", "{785E568E-9DAC-4619-A3CC-BCD9948894DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16C3FE80-BF52-418E-A42A-08CDE4BEC67E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16C3FE80-BF52-418E-A42A-08CDE4BEC67E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16C3FE80-BF52-418E-A42A-08CDE4BEC67E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16C3FE80-BF52-418E-A42A-08CDE4BEC67E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{785E568E-9DAC-4619-A3CC-BCD9948894DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{785E568E-9DAC-4619-A3CC-BCD9948894DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{785E568E-9DAC-4619-A3CC-BCD9948894DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{785E568E-9DAC-4619-A3CC-BCD9948894DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
