@@ -15,7 +15,7 @@ namespace RssFeedReader
         {
             InitializeComponent();
 
-            _scheduleTime = 10000;
+            _scheduleTime = 60000;
         }
 
         public long ScheduleTime
@@ -37,7 +37,7 @@ namespace RssFeedReader
         {
             feedContent.Dispatcher.BeginInvoke(
                 new Action(() => feedContent.DataContext =
-                    RssFeedLoader.StartPollingRssSourcesOnSchedule(textUrl.Text, new List<string>())));
+                    RssFeedLoader.StartPollingRssSourcesOnSchedule(textUrl.Text, new List<string>(), new List<string>())));
         }
     }
 }
