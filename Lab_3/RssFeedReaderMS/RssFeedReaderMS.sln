@@ -3,13 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RssFeedReader.Api", "RssFeedReader.Api\RssFeedReader.Api.csproj", "{D2AA2ACF-E4F1-40EB-B2BA-1699C6659A70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RssFeedReader.Api", "RssFeedReader.Api\RssFeedReader.Api.csproj", "{D2AA2ACF-E4F1-40EB-B2BA-1699C6659A70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RssFeedFilter.Api", "RssFeedFilter.Api\RssFeedFilter.Api.csproj", "{3E5D06CF-3229-47D4-8DEE-F95632A140FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RssFeedFilter.Api", "RssFeedFilter.Api\RssFeedFilter.Api.csproj", "{1AAF675C-DF1D-4584-BD47-A76C67093952}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RssFeedEmailSender.Api", "RssFeedEmailSender.Api\RssFeedEmailSender.Api.csproj", "{4EA75C75-6610-4A9D-9570-70B2F44C15EB}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RssFeedSchedule.Api", "RssFeedSchedule.Api\RssFeedSchedule.Api.csproj", "{C402D939-4C39-4ED9-AEC3-5EE958A4D0FE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RssFeedEmailSender.Api", "RssFeedEmailSender.Api\RssFeedEmailSender.Api.csproj", "{EB77A65B-EDF0-4649-BDAD-7770106A13A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,18 +19,14 @@ Global
 		{D2AA2ACF-E4F1-40EB-B2BA-1699C6659A70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2AA2ACF-E4F1-40EB-B2BA-1699C6659A70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2AA2ACF-E4F1-40EB-B2BA-1699C6659A70}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3E5D06CF-3229-47D4-8DEE-F95632A140FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3E5D06CF-3229-47D4-8DEE-F95632A140FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3E5D06CF-3229-47D4-8DEE-F95632A140FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3E5D06CF-3229-47D4-8DEE-F95632A140FE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4EA75C75-6610-4A9D-9570-70B2F44C15EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4EA75C75-6610-4A9D-9570-70B2F44C15EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4EA75C75-6610-4A9D-9570-70B2F44C15EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4EA75C75-6610-4A9D-9570-70B2F44C15EB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C402D939-4C39-4ED9-AEC3-5EE958A4D0FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C402D939-4C39-4ED9-AEC3-5EE958A4D0FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C402D939-4C39-4ED9-AEC3-5EE958A4D0FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C402D939-4C39-4ED9-AEC3-5EE958A4D0FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AAF675C-DF1D-4584-BD47-A76C67093952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AAF675C-DF1D-4584-BD47-A76C67093952}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AAF675C-DF1D-4584-BD47-A76C67093952}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AAF675C-DF1D-4584-BD47-A76C67093952}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB77A65B-EDF0-4649-BDAD-7770106A13A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB77A65B-EDF0-4649-BDAD-7770106A13A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB77A65B-EDF0-4649-BDAD-7770106A13A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB77A65B-EDF0-4649-BDAD-7770106A13A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
