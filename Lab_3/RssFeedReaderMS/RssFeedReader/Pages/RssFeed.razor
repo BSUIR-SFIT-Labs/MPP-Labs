@@ -81,7 +81,7 @@ else
     {
         if (ButtonContent == "Start getting feed")
         {
-            _timer = new Timer(Test, null, 0, _scheduleTime);
+            _timer = new Timer(TimerCallback, null, 0, _scheduleTime);
 
             IsDisabled = true;
             ButtonContent = "Stop getting feed";
@@ -100,7 +100,7 @@ else
         ScheduleTime = Convert.ToInt64(args.Value);
     }
 
-    private async void Test(object o)
+    private async void TimerCallback(object o)
     {
         _feedItemList = await RssFeedLoaderService.StartPollingRssSourcesOnSchedule(_feedReceivingModel.Url,
             _feedReceivingModel.Tags, _feedReceivingModel.Recipients);

@@ -49,7 +49,7 @@ namespace RssFeedReader
                         _recipients.AddRange(TbRecipients.Text.Split(';'));
                     }
 
-                    _timer = new Timer(Test, null, 0, _scheduleTime);
+                    _timer = new Timer(TimerCallback, null, 0, _scheduleTime);
                     StartGettingFeedPreparation();
                 }
                 else
@@ -68,7 +68,7 @@ namespace RssFeedReader
             }
         }
 
-        private void Test(object o)
+        private void TimerCallback(object o)
         {
             FeedContent.Dispatcher.BeginInvoke(
                 new Action(() => FeedContent.DataContext =
