@@ -1,0 +1,110 @@
+﻿@page "/rssfeed"
+
+@using RssFeedReader.Data.Feed
+@using RssFeedReader.Data
+@using RssFeedReader.Data.Models
+@using System.Threading
+@inject RssFeedLoaderService RssFeedLoaderService
+
+<EditForm Model="@_feedReceivingModel" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <label for="feed-url">Feed url:</label>
+    <InputText id="feed-url" disabled="@IsDisabled" @bind-Value="_feedReceivingModel.Url" />
+    <label for="tags">Tags:</label>
+    <InputText id="tags" disabled="@IsDisabled" @bind-Value="_feedReceivingModel.Tags" />
+    <label for="recipirnts">Recipients:</label>
+    <InputText id="recipirnts" disabled="@IsDisabled" @bind-Value="_feedReceivingModel.Recipients" />
+    <label>Schedule:</label>
+    <span>
+        <input type="radio" name="schedule" value="60000" @onchange="SelectionChanged" checked="checked" />
+        <label>1 min</label>
+    </span>
+    <span>
+        <input type="radio" name="schedule" value="300000" @onchange="SelectionChanged" />
+        <label>5 min</label>
+    </span>
+    <span>
+        <input type="radio" name="schedule" value="1800000" @onchange="SelectionChanged" />
+        <label>30 min</label>
+    </span>
+    <span>
+        <input type="radio" name="schedule" value="3600000" @onchange="SelectionChanged" />
+        <label>1 hour</label>
+    </span>
+    <span>
+        <input type="radio" name="schedule" value="7200000" @onchange="SelectionChanged" />
+        <label>2 hour</label>
+    </span>
+    <button type="submit">@ButtonContent</button>
+</EditForm>
+
+@if (_feedItemList == null)
+{
+    <h5 style="margin: 10px 0"><strong>Nothing found!</strong> You may not have started getting feed.</h5>
+}
+else
+{
+    <div style="margin-top: 10px">
+        @foreach (var feedItem in _feedItemList.Items)
+        {
+            <h5><a href="@feedItem.Link">@feedItem.Title</a></h5>
+            @((MarkupString)feedItem.Summary)
+            <hr />
+        }
+    </div>
+}
+
+@code {
+    private readonly FeedReceivingModel _feedReceivingModel = new FeedReceivingModel();
+
+    private FeedItemList _feedItemList;
+    private Timer _timer;
+    private long _scheduleTime = 60000;
+
+    public bool IsDisabled { get; private set; }
+
+    public string ButtonContent { get; private set; } = "Start getting feed";
+
+    public long ScheduleTime
+    {
+        get => _scheduleTime;
+        set
+        {
+            _scheduleTime = value;
+            _timer?.Change(0, _scheduleTime);
+        }
+    }
+
+    private void HandleValidSubmit()
+    {
+        if (ButtonContent == "Start getting feed")
+        {
+            _timer = new Timer(TimerCallback, null, 0, _scheduleTime);
+
+            IsDisabled = true;
+            ButtonContent = "Stop getting feed";
+        }
+        else
+        {
+            IsDisabled = false;
+            _feedItemList = null;
+            _timer?.Dispose();
+            ButtonContent = "Start getting feed";
+        }
+    }
+
+    private void SelectionChanged(ChangeEventArgs args)
+    {
+        ScheduleTime = Convert.ToInt64(args.Value);
+    }
+
+    private async void TimerCallback(object o)
+    {
+        _feedItemList = await RssFeedLoaderService.StartPollingRssSourcesOnSchedule(_feedReceivingModel.Url,
+            _feedReceivingModel.Tags, _feedReceivingModel.Recipients);
+
+        await InvokeAsync(StateHasChanged);
+    }
+}
