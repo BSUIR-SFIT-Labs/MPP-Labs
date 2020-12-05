@@ -94,5 +94,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UiAttributesForEmbedding\UiAttributesForEmbedding.csproj">
+      <Project>{c6178a46-8634-4338-877e-aa280c89247e}</Project>
+      <Name>UiAttributesForEmbedding</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
