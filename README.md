@@ -7,4 +7,10 @@
 ### 2. Программа для редактирования изображений (ЛР №2)
  - [Информация о программе](https://github.com/BSUIR-SFIT-Labs/MPP-Labs/tree/master/Lab_2/README.md)
  - [Исходный код](https://github.com/BSUIR-SFIT-Labs/MPP-Labs/blob/master/Lab_2)
- - ---
+
+---
+### 3. Программа для опроса RSS-источников (ЛР №3)
+ - [Информация о программе](https://github.com/BSUIR-SFIT-Labs/MPP-Labs/blob/master/Lab_3/README.md)
+ - [Исходный код](https://github.com/BSUIR-SFIT-Labs/MPP-Labs/blob/master/Lab_3)
+
+---
